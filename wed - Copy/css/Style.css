@@ -1,0 +1,124 @@
+/* ------------------------- */
+/* 2.2 - Base & Typography Styles */
+/* ------------------------- */
+
+/* A simple CSS Reset to remove default browser margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F5DC; /* beige */
+    color: #3D2B1F; /* dark wood brown */
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: 'Merriweather', serif;
+    color: #3D2B1F; /* dark wood brown */
+    margin-bottom: 1rem; /* 1rem is typically 16px */
+}
+
+a {
+    color: #B87333; /* copper/bronze accent */
+    text-decoration: none;
+}
+
+/* ------------------------- */
+/* 2.4 - Layout Structure (Flexbox) */
+/* ------------------------- */
+
+/* Center the main content of the website */
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styling */
+header {
+    background: #ffffff;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #3D2B1F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 60px; /* Adjust logo size */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+/* 2.5 - Visual & Interactive Styles */
+header nav a {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #3D2B1F; /* Darken on hover */
+}
+
+/* Main content and footer styling */
+main {
+    padding: 2rem 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background-color: #3D2B1F;
+    color: #F5F5DC;
+}
+
+/* ------------------------- */
+/* 3.0 - Responsive Design */
+/* ------------------------- */
+
+/* 3.3 - Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 3.1 - Breakpoints for mobile devices (e.g., tablets and phones) */
+@media (max-width: 768px) {
+    /* Change header layout to be stacked on mobile */
+    header {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Adjust font sizes for smaller screens using relative units (3.2) */
+    h1 {
+        font-size: 2rem; /* Using a relative unit */
+    }
+
+   .container {
+        width: 90%; /* Using a percentage for responsive width (3.2) */
+    }
+}
