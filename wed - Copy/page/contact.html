@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Sweet Delights Bakery</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Delights Bakery...</title>
-   <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: #FAFAFA;">
+<body>
     <header>
-        <a href="index.html"><img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo" width="300" height="200"></a>
-       <nav>
-            <ul>
+        <a href="../index.html"><img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo"></a>
+        <nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="menu.html">Menu</a></li>
@@ -26,42 +29,59 @@
     <main>
         <section class="contact-details">
             <h1>Get In Touch</h1>
-            <p>We'd love to hear from you! Visit us in-store or send us a message below.</p>
-
+            <p id="myParagraph">We'd love to hear from you! Visit us in-store or send us a message below.</p>
+            
+            <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                <h2>Send a Message</h2>
+                <table>
+                    <tr>
+                        <td><label for="name">Your Name:</label></td>
+                        <td><input type="text" id="name" name="name" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Your Email:</label></td>
+                        <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="message">Message:</label></td>
+                        <td><textarea id="message" name="message" rows="5" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: right;"><input type="submit" value="Send Message"></td>
+                    </tr>
+                </table>
+            </form>
+            
             <h2>Our Details</h2>
             <p><strong>Address:</strong> 123 Pretorius Street, Polokwane, 0700</p>
             <p><strong>Phone:</strong> 015 291 1234</p>
             <p><strong>Email:</strong> orders@sweetdelights.co.za</p>
-            <form name="contact" method="POST" data-netlify="true">
-                <div class="form-group">
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
+            
             <h2>Opening Hours</h2>
             <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
             <p>Saturday: 8:00 AM - 3:00 PM</p>
             <p>Sunday: Closed</p>
-            
-            <h2>Send a Message</h2>
-            <form action="#" method="POST">
-                <p>Contact form functionality will be implemented later.</p>
-            </form>
         </section>
     </main>
 
     <footer>
+        <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
         <p>&copy; 2025 Sweet Delights Bakery. All Rights Reserved.</p>
     </footer>
-
+    
+    <script>
+        // Toggles the 'active' class on the nav-links to show/hide the menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+    
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

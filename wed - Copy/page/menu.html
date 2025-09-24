@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Menu | Sweet Delights Bakery</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Delights Bakery...</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: #FAFAFA;">
+<body>
     <header>
-        <a href="index.html"><img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo" width="300" height="200"></a>
-       <nav>
-            <ul>
+        <a href="../index.html"><img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo"></a>
+        <nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="menu.html">Menu</a></li>
@@ -22,39 +25,59 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <section class="menu-list">
             <h1>Our Menu</h1>
-            <p>All items are baked fresh in-house. Please ask about our daily specials!</p>
-
+            <p id="myParagraph">All items are baked fresh in-house. Please ask about our daily specials!</p>
             <h2>Artisan Breads</h2>
-            <p>Sourdough Loaf - R45.00</p>
-            <img src="../Assests/download (2).webp" alt="Sourdough Loaf" width="200" height="200">
-            <p>Multi-seed Rye - R50.00</p>
-            <img src="../Assests/download (3).webp" alt="Multi-seed Rye" width="200" height="200">
+            <div class="staff-container">
+                <div class="staff-member">
+                    <img src="../Assests/download (2).webp" alt="Sourdough Loaf" class="staff-img">
+                    <p>Sourdough Loaf<br><small>R45.00</small></p>
+                </div>
+                <div class="staff-member">
+                    <img src="../Assests/download (3).webp" alt="Multi-seed Rye" class="staff-img">
+                    <p>Multi-seed Rye<br><small>R50.00</small></p>
+                </div>
+            </div>
             <h2>Pastries</h2>
-            <p>Butter Croissant - R25.00</p>
-            <img src="../Assests/download (4).webp" alt="Butter Croissant" width="200" height="200">
-            <p>Chocolate Éclair - R35.00</p>
-            <img src="../Assests/download (5).webp" alt="Chocolate Éclair" width="200" height="200">
-            
+            <div class="staff-container">
+                <div class="staff-member">
+                    <img src="../Assests/download (4).webp" alt="Butter Croissant" class="staff-img">
+                    <p>Butter Croissant<br><small>R25.00</small></p>
+                </div>
+                <div class="staff-member">
+                    <img src="../Assests/download (5).webp" alt="Chocolate Éclair" class="staff-img">
+                    <p>Chocolate Éclair<br><small>R35.00</small></p>
+                </div>
+            </div>
             <h2>Cakes (Slice / Whole)</h2>
-            <p>Carrot Cake - R40.00 / R350.00</p>
-            <img src="../Assests/OIP.webp" alt="Carrot Cake" width="200" height="200">
-            <p>Decadent Chocolate Cake - R45.00 / R400.00</p>
-            <img src="../Assests/download (6).webp" alt="Decadent Chocolate Cake" width="200" height="200">
-            <h2>Specialty Items</h2>
-            <p>Vegan Apple Crumble (Slice) - R45.00</p>
-            <img src="../Assests/OIP (1).webp" alt="Vegan Apple Crumble" width="200" height="200">
-            <p>Gluten-Free Brownie - R30.00</p>
-            <img src="../Assests/OIP (2).webp" alt="Gluten-Free Brownie" width="200" height="200">
+            <div class="staff-container">
+                <div class="staff-member">
+                    <img src="../Assests/OIP.webp" alt="Carrot Cake" class="staff-img">
+                    <p>Carrot Cake<br><small>R40.00 / R350.00</small></p>
+                </div>
+                <div class="staff-member">
+                    <img src="../Assests/download (6).webp" alt="Decadent Chocolate Cake" class="staff-img">
+                    <p>Decadent Chocolate Cake<br><small>R45.00 / R400.00</small></p>
+                </div>
+            </div>
         </section>
     </main>
-
     <footer>
+        <div class="socials">
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
         <p>&copy; 2025 Sweet Delights Bakery. All Rights Reserved.</p>
     </footer>
-
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

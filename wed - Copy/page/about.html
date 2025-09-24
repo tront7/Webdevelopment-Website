@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Story | Sweet Delights Bakery</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Delights Bakery...</title>
-    <link rel="stylesheet" href="../css/style.css">>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
-</head>
-<body style="background-color: #FAFAFA;">
+    <title>About Us | Sweet Delights Bakery</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet"> </head>
+<body>
     <header>
-        <a href="index.html"><img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo" width="300" height="200"></a>
-       <nav>
-            <ul>
+        <a href="../index.html"><img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo"></a>
+        
+        <nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="menu.html">Menu</a></li>
@@ -26,22 +28,58 @@
     <main>
         <section class="story">
             <h1>Our Story</h1>
-            <img src="../Assests/familia.webp" alt="The family owners of the bakery smiling.">
+            <img src="../Assests/familia.webp" alt="The family owners of the bakery smiling." style="display: block; margin: 20px auto; max-width: 500px; border-radius: 10px;">
             <article>
                 <h2>From Our Family to Yours</h2>
-                <p>Welcome to Sweet Delights Bakery, where every loaf, pastry, and cake tells a story of passion and tradition. Our journey began in a warm family kitchen in Polokwane, filled with the scent of freshly baked bread and the joy of shared recipes passed down through generations. What started as a family tradition of baking for holidays, birthdays, and special moments soon blossomed into a dream: to share that same comfort and delight with our entire community.
-
-                    In [year], we took a leap of faith and opened our doors, transforming a lifelong passion into the family-owned bakery you see today. We wanted to create more than just a place to buy baked goods; we envisioned a cornerstone of the community, a place where the simple pleasure of a perfect pastry could brighten anyone's day.
-                    
+                <p class="responsive-text">Welcome to Sweet Delights Bakery, where every loaf, pastry, and cake tells a story of passion and tradition. Our journey began in a warm family kitchen in Polokwane, filled with the scent of freshly baked bread and the joy of shared recipes passed down through generations. What started as a family tradition of baking for holidays, birthdays, and special moments soon blossomed into a dream: to share that same comfort and delight with our entire community.</p>
+                
                 <h2>Our Mission & Values</h2>
-                <p>Our mission is to create moments of joy through delicious, handcrafted baked goods. We value community, quality, and freshness in everything we do. We are also proud to offer catering for weddings, birthdays, and corporate events.</p>
+                <p class="responsive-text">Our mission is to create moments of joy through delicious, handcrafted baked goods. We value community, quality, and freshness in everything we do. We are also proud to offer catering for weddings, birthdays, and corporate events.</p>
             </article>
+        </section>
+        
+        <section class="featured-products">
+            <h2>Meet Our Bakers</h2>
+            <div class="staff-container">
+                <div class="staff-member">
+                    <img src="../Assests/istockphoto-1319936956-612x612.jpg" alt="Head Baker" class="staff-img">
+                    <p>Jane Doe<br><small>Head Baker</small></p>
+                </div>
+                <div class="staff-member">
+                    <img src="../Assests/smiling-african-female-bakers-looking-600nw-2134710165.webp" alt="Pastry Chef" class="staff-img">
+                    <p>Emily White<br><small>Pastry Chef</small></p>
+                </div>
+                <div class="staff-member">
+                     <img src="../Assests/R.jpg" alt="Cake Decorator" class="staff-img">
+                    <p>John Smith<br><small>Cake Decorator</small></p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
+        <div class="socials">
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
         <p>&copy; 2025 Sweet Delights Bakery. All Rights Reserved.</p>
     </footer>
-
+    
+    <script>
+        // Selects the hamburger and nav-links elements from the document
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+    
+        // Adds a click event listener to the hamburger icon
+        hamburger.addEventListener('click', () => {
+            // Toggles the 'active' class on the nav-links to show/hide the menu
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
+    </section>
+    </main>
 </body>
 </html>
