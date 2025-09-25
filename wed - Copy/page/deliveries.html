@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Sweet Delights Bakery</title>
+    <title>Deliveries | Sweet Delights Bakery</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- Correct & Stable Font Awesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -28,53 +28,35 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <section class="contact-details">
-            <h1>Get In Touch</h1>
-            <p id="myParagraph">We'd love to hear from you! Visit us in-store or send us a message below.</p>
-            <form name="contact" method="POST" data-netlify="true" class="contact-form">
-                <h2>Send a Message</h2>
-                <table>
-                    <tr>
-                        <td><label for="name">Your Name:</label></td>
-                        <td><input type="text" id="name" name="name" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="email">Your Email:</label></td>
-                        <td><input type="email" id="email" name="email" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="message">Message:</label></td>
-                        <td><textarea id="message" name="message" rows="5" required></textarea></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td style="text-align: right;"><input type="submit" value="Send Message"></td>
-                    </tr>
-                </table>
-            </form>
-            <div class="info-center">
-                <h2>Our Details</h2>
-                <p><strong>Address:</strong> 123 Pretorius Street, Polokwane, 0700</p>
-                <p><strong>Phone:</strong> 015 291 1234</p>
-                <p><strong>Email:</strong> orders@sweetdelights.co.za</p>
-                <br>
-                <h2>Opening Hours</h2>
-                <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
-                <p>Saturday: 8:00 AM - 3:00 PM</p>
-                <p>Sunday: Closed</p>
+        <section class="delivery-info">
+            <h1>Freshly Baked, Delivered to Your Door</h1>
+            <p id="myParagraph">We've partnered with a trusted local delivery service to bring our treats to you!</p>
+            
+            <div class="delivery-partner">
+                <!-- You can replace this placeholder with your delivery partner's logo -->
+                <img src="https://placehold.co/250x150/EFEFEF/3D2B1F?text=Delivery+Partner" alt="Delivery Partner Logo" class="delivery-logo">
+                <h2>How to Order for Delivery</h2>
+                <p class="responsive-text">
+                    You can find us on the <strong>Mr. D Food</strong> and <strong>Uber Eats</strong> apps. Simply search for "Sweet Delights Bakery," place your order, and let us handle the rest. Enjoy our delicious, handcrafted goods from the comfort of your home or office.
+                </p>
+                <p class="responsive-text">
+                    Delivery is available within a 15km radius of our Polokwane store during our regular opening hours.
+                </p>
             </div>
         </section>
     </main>
+
     <footer>
         <div class="socials">
-            <!-- Correct Icon Classes -->
             <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
         </div>
         <p>&copy; 2025 Sweet Delights Bakery. All Rights Reserved.</p>
     </footer>
+    
     <script>
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
@@ -83,5 +65,4 @@
         });
     </script>
 </body>
-</html>
 </html>
