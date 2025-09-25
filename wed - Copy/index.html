@@ -1,59 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Delights Bakery | Artisan Breads, Pastries & Cakes in Polokwane</title>
-    <link rel="stylesheet" href="./css/Style.css">
-    <!-- Correct & Stable Font Awesome Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+<!DOCTYPE html> <!-- Declares the document type and version of HTML (HTML5) -->
+<html lang="en"> <!-- Root element of the HTML page with language set to English -->
+<head> <!-- Contains meta information about the document -->
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper rendering and touch zooming on mobile devices -->
+    <title>Sweet Delights Bakery | Artisan Breads, Pastries & Cakes in Polokwane</title> <!-- Sets the page title that appears in the browser tab -->
+    <link rel="stylesheet" href="./css/Style.css"> <!-- Links the external CSS stylesheet -->
+    <!-- Correct & Stable Font Awesome Link --> <!-- Comment about the Font Awesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Links Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet"> <!-- Links Google Fonts -->
 </head>
-<body>
-<header>
-    <a href="index.html">
-        <img src="./Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Logo" width="150" height="150">
+<body> <!-- Contains the visible content of the webpage -->
+<header> <!-- Defines the header section of the page -->
+    <a href="index.html"> <!-- Link to the home page -->
+        <img src="./Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Logo" width="150" height="150"> <!-- Logo image with specified dimensions -->
     </a>
-    <nav>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <nav> <!-- Defines navigation links -->
+        <div class="hamburger"> <!-- Container for the hamburger menu icon (mobile view) -->
+            <span></span> <!-- First line of the hamburger icon -->
+            <span></span> <!-- Second line of the hamburger icon -->
+            <span></span> <!-- Third line of the hamburger icon -->
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="./page/about.html">About</a></li>
-            <li><a href="./page/menu.html">Menu</a></li>
-            <!-- New Deliveries Link -->
-            <li><a href="./page/deliveries.html">Deliveries</a></li>
-            <li><a href="./page/contact.html">Contact</a></li>
+        <ul class="nav-links"> <!-- Unordered list for navigation links -->
+            <li><a href="index.html">Home</a></li> <!-- Home page link (current page) -->
+            <li><a href="./page/about.html">About</a></li> <!-- About page link -->
+            <li><a href="./page/menu.html">Menu</a></li> <!-- Menu page link -->
+            <!-- New Deliveries Link --> <!-- Comment indicating this is a new link -->
+            <li><a href="./page/deliveries.html">Deliveries</a></li> <!-- Deliveries page link -->
+            <li><a href="./page/contact.html">Contact</a></li> <!-- Contact page link -->
         </ul>
     </nav>
 </header>
-<main>
-    <section class="hero">
-        <picture>
-            <source srcset="./Assests/download (2).webp" media="(min-width: 768px)">
-            <img src="./Assests/download (2).webp" alt="Freshly baked artisan sourdough bread" width="200" height="200">
+<main> <!-- Contains the main content of the page -->
+    <section class="hero"> <!-- Hero section for the main banner/content -->
+        <picture> <!-- Container for multiple image sources for responsive images -->
+            <source srcset="./Assests/download (2).webp" media="(min-width: 768px)"> <!-- Source for larger screens -->
+            <img src="./Assests/bread.jpg" alt="Freshly baked artisan sourdough bread" width="992" height="410"> <!-- Fallback image -->
         </picture>
-        <h1>Handcrafted Goodness, Baked Fresh Daily.</h1>
-        <p class="responsive-text">Your local artisan bakery in the heart of Polokwane.</p>
+        <h1>Handcrafted Goodness, Baked Fresh Daily.</h1> <!-- Main heading -->
+        <p class="responsive-text">Your local artisan bakery in the heart of Polokwane.</p> <!-- Supporting text with responsive class -->
     </section>
 </main>
-<footer>
-    <div class="socials">
-        <!-- Correct Icon Classes -->
-        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+<footer> <!-- Defines the footer section of the page -->
+    <div class="socials"> <!-- Container for social media links -->
+        <!-- Correct Icon Classes --> <!-- Comment about icon classes -->
+        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a> <!-- Facebook link with icon -->
+        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a> <!-- Instagram link with icon -->
+        <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a> <!-- Twitter link with icon -->
     </div>
-    <p>&copy; 2025 Sweet Delights Bakery. All Rights Reserved.</p>
+    <p>&copy; 2025 Sweet Delights Bakery. All Rights Reserved.</p> <!-- Copyright information -->
 </footer>
-<script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+<script> <!-- JavaScript for interactive functionality -->
+    const hamburger = document.querySelector('.hamburger'); // Selects the hamburger menu element
+    const navLinks = document.querySelector('.nav-links'); // Selects the navigation links element
+    hamburger.addEventListener('click', () => { // Adds click event listener to hamburger menu
+        navLinks.classList.toggle('active'); // Toggles the 'active' class on navigation links
     });
 </script>
 </body>
