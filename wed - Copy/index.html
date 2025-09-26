@@ -1,60 +1,64 @@
 <!DOCTYPE html> <!-- Declares the document type and version of HTML (HTML5) -->
-<html lang="en"> <!-- Root element of the HTML page with language set to English -->
-<head> <!-- Contains meta information about the document -->
-    <meta charset="UTF-8"> <!-- Specifies the character encoding for the document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper rendering and touch zooming on mobile devices -->
-    <title>Sweet Delights Bakery | Artisan Breads, Pastries & Cakes in Polokwane</title> <!-- Sets the page title that appears in the browser tab -->
-    <link rel="stylesheet" href="./css/Style.css"> <!-- Links the external CSS stylesheet -->
-    <!-- Correct & Stable Font Awesome Link --> <!-- Comment about the Font Awesome library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Links Font Awesome for icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet"> <!-- Links Google Fonts -->
-</head>
-<body> <!-- Contains the visible content of the webpage -->
+<html lang="en"> <!-- Opens the HTML document and sets the language to English -->
+<head> <!-- Contains meta-information about the HTML document -->
+    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on all devices for responsiveness -->
+    <title>Sweet Delights Bakery | Artisan Breads, Pastries & Cakes in Polokwane</title> <!-- Sets the title of the webpage shown in the browser tab -->
+    <link rel="stylesheet" href="./css/Style.css"> <!-- Links an external CSS file for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Links Font Awesome for icon usage -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet"> <!-- Imports Google Fonts for typography -->
+</head> <!-- Closes the head section -->
+<body> <!-- Opens the body of the document which contains all visible content -->
 <header> <!-- Defines the header section of the page -->
-    <a href="index.html"> <!-- Link to the home page -->
-        <img src="./Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Logo" width="150" height="150"> <!-- Logo image with specified dimensions -->
-    </a>
-    <nav> <!-- Defines navigation links -->
-        <div class="hamburger"> <!-- Container for the hamburger menu icon (mobile view) -->
+    <a href="index.html"> <!-- Creates a clickable logo that links to the homepage -->
+        <img src="./Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Logo" width="150" height="150"> <!-- Displays the logo image with specified dimensions -->
+    </a> <!-- Closes the anchor tag -->
+    <nav> <!-- Begins the navigation bar -->
+        <div class="hamburger"> <!-- A container for the mobile menu icon (hamburger menu) -->
             <span></span> <!-- First line of the hamburger icon -->
             <span></span> <!-- Second line of the hamburger icon -->
             <span></span> <!-- Third line of the hamburger icon -->
-        </div>
-        <ul class="nav-links"> <!-- Unordered list for navigation links -->
-            <li><a href="index.html">Home</a></li> <!-- Home page link (current page) -->
-            <li><a href="./page/about.html">About</a></li> <!-- About page link -->
-            <li><a href="./page/menu.html">Menu</a></li> <!-- Menu page link -->
-            <!-- New Deliveries Link --> <!-- Comment indicating this is a new link -->
-            <li><a href="./page/deliveries.html">Deliveries</a></li> <!-- Deliveries page link -->
-            <li><a href="./page/contact.html">Contact</a></li> <!-- Contact page link -->
-        </ul>
-    </nav>
-</header>
-<main> <!-- Contains the main content of the page -->
-    <section class="hero"> <!-- Hero section for the main banner/content -->
-        <picture> <!-- Container for multiple image sources for responsive images -->
-            <source srcset="./Assests/bread.jpg" media="(min-width: 768px)"> <!-- Source for larger screens -->
-            <img src="./Assests/bread.jpg" alt="Freshly baked artisan sourdough bread" width="992" height="410"> <!-- Fallback image -->
-        </picture>
-        <h1>Handcrafted Goodness, Baked Fresh Daily.</h1> <!-- Main heading -->
-        <p class="responsive-text" style="text-align: center;">Your local artisan bakery in the heart of Polokwane.</p> <!-- Supporting text with responsive class and centered alignment -->
-    </section>
-</main>
-<footer> <!-- Defines the footer section of the page -->
+        </div> <!-- Closes the hamburger menu container -->
+        <ul class="nav-links"> <!-- Unordered list of navigation links with a class for styling/JS targeting -->
+            <li><a href="index.html">Home</a></li> <!-- Link to Home page -->
+            <li><a href="./page/about.html">About</a></li> <!-- Link to About page -->
+            <li><a href="./page/menu.html">Menu</a></li> <!-- Link to Menu page -->
+            <li><a href="./page/deliveries.html">Deliveries</a></li> <!-- Link to Deliveries page -->
+            <li><a href="./page/contact.html">Contact</a></li> <!-- Link to Contact page -->
+        </ul> <!-- Closes the navigation list -->
+    </nav> <!-- Closes the navigation bar -->
+</header> <!-- Closes the header section -->
+<main> <!-- Defines the main content of the page -->
+    <section class="hero" style="text-align: center;"> <!-- A section for the hero content, centered text -->
+        <picture> <!-- Container for responsive images (though only one image is used here) -->
+            <img src="./Assests/bread.jpg" media="(min-width: 322x)" style="display: block; margin: 20px auto; max-width: 320px; border-radius: 10px;"> <!-- Displays an image of bread with inline styles for layout and rounded corners -->
+        </picture> <!-- Closes the picture element -->
+        <h1>Handcrafted Goodness, Baked Fresh Daily.</h1> <!-- Main headline for the hero section -->
+        <p class="responsive-text">Your local artisan bakery in the heart of Polokwane.</p> <!-- Paragraph with a class for responsive text styling -->
+    </section> <!-- Closes the hero section -->
+</main> <!-- Closes the main content -->
+<footer> <!-- Opens the footer section -->
     <div class="socials"> <!-- Container for social media links -->
-        <!-- Correct Icon Classes --> <!-- Comment about icon classes -->
-        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a> <!-- Facebook link with icon -->
-        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a> <!-- Instagram link with icon -->
-        <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a> <!-- Twitter link with icon -->
-    </div>
-    <p>&copy; 2025 Sweet Delights Bakery. All Rights Reserved.</p> <!-- Copyright information -->
-</footer>
-<script> <!-- JavaScript for interactive functionality -->
-    const hamburger = document.querySelector('.hamburger'); // Selects the hamburger menu element
-    const navLinks = document.querySelector('.nav-links'); // Selects the navigation links element
-    hamburger.addEventListener('click', () => { // Adds click event listener to hamburger menu
-        navLinks.classList.toggle('active'); // Toggles the 'active' class on navigation links
+        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a> <!-- Facebook icon link, opens in new tab -->
+        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a> <!-- Instagram icon link, opens in new tab -->
+        <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a> <!-- Twitter icon link, opens in new tab -->
+    </div> <!-- Closes the social icons container -->
+    <p>&copy; 2025 Sweet Delights Bakery. All Rights Reserved.</p> <!-- Copyright notice -->
+</footer> <!-- Closes the footer -->
+<script> <!-- Begins JavaScript block -->
+    // Contains client-side JavaScript code
+    const hamburger = document.querySelector('.hamburger'); 
+    // Selects the HTML element with the class 'hamburger'
+
+    const navLinks = document.querySelector('.nav-links'); 
+    // Selects the HTML element with the class 'nav-links' (the list of navigation items)
+
+    hamburger.addEventListener('click', () => { 
+        // Adds an event listener that executes a function when the 'hamburger' element is clicked
+
+        navLinks.classList.toggle('active'); 
+        // Toggles the 'active' class on the 'nav-links' element, typically used to show/hide the menu on mobile
     });
-</script>
-</body>
-</html>
+</script> <!-- Ends JavaScript block -->
+</body> <!-- Closes the body section -->
+</html> <!-- Closes the HTML document -->

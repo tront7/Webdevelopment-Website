@@ -26,7 +26,7 @@ The project uses a clear, hierarchical structure to manage assets and pages:
 │   └── style.css            # Main stylesheet for all 5 pages.   
 │
 └── Assests/
-│   └── *images*             # Folder containing all site images and logo.  
+│   └── *images*             # Folder containing all site images,Logo,Screenshots  
 │
 └── index.html               # Home page (entry point).
 
