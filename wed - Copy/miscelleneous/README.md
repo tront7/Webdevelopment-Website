@@ -48,17 +48,12 @@ Deliveries Page: Customize the text in deliveries.html with actual partner names
 
 ## References
 
-- **Font Awesome** - For social media and UI icons
-  - Used version 6.5.2 from CDNJS
-  - Link: `https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css`
+## References
 
-- **Google Fonts** - For typography
-  - Merriweather (700 weight) for headings
-  - Roboto (regular and 300 weight) for body text
-  - Link: `https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap`
+Font Awesome. (2025, September 12). Font Awesome. Retrieved from Font Awesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css
 
-- **Placeholder Images** - For delivery partner logo placeholder
-  - Used placeholder.co service
-  - Example: `https://placehold.co/250x150/EFEFEF/3D2B1F?text=Delivery+Partner`
+Google. (2025, September 13). Google Fonts. Retrieved from Google Fonts: https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap
+
+Placeholder.co. (2025, September 14). Placeholder Images. Retrieved from Placeholder: https://placehold.co/250x150/EFEFEF/3D2B1F?text=Delivery+Partner
 
 Author: [Nemukongwe Oripfa Clinton]
