@@ -1,81 +1,226 @@
-<!DOCTYPE html> <!-- Declares the document type and version of HTML (HTML5) -->
-<html lang="en"> <!-- Root element of the HTML page with language set to English -->
-<head> <!-- Contains meta information about the document -->
-    <meta charset="UTF-8"> <!-- Specifies the character encoding for the document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper rendering and touch zooming on mobile devices -->
-    <title>About Us | Sweet Delights Bakery</title> <!-- Sets the page title that appears in the browser tab -->
-    <link rel="stylesheet" href="../css/style.css"> <!-- Links the external CSS stylesheet -->
-    <!-- Correct & Stable Font Awesome Link --> <!-- Comment about the Font Awesome library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Links Font Awesome for icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet"> <!-- Links Google Fonts -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Sweet Delights Bakery - Family-Owned Artisan Bakery</title>
+    <meta name="keywords" content="bakery, Polokwane, artisan bread, pastries, cakes, custom cakes, fresh bread, delivery bakery, Sweet Delights Bakery">
+    <meta name="description" content="Discover the heartwarming story behind Sweet Delights Bakery. Family-owned artisan bakery in Polokwane with generations of baking tradition.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+           
 </head>
-<body> <!-- Contains the visible content of the webpage -->
-    <header> <!-- Defines the header section of the page -->
-        <a href="../index.html"><img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo"></a> <!-- Logo that links back to the home page -->
-        <nav> <!-- Defines navigation links -->
-            <div class="hamburger"> <!-- Container for the hamburger menu icon (mobile view) -->
-                <span></span> <!-- First line of the hamburger icon -->
-                <span></span> <!-- Second line of the hamburger icon -->
-                <span></span> <!-- Third line of the hamburger icon -->
-            </div>
-            <ul class="nav-links"> <!-- Unordered list for navigation links -->
-                <li><a href="../index.html">Home</a></li> <!-- Home page link -->
-                <li><a href="about.html">About</a></li> <!-- Current page link (about) -->
-                <li><a href="menu.html">Menu</a></li> <!-- Menu page link -->
-                <!-- New Deliveries Link --> <!-- Comment indicating this is a new link -->
-                <li><a href="deliveries.html">Deliveries</a></li> <!-- Deliveries page link -->
-                <li><a href="contact.html">Contact</a></li> <!-- Contact page link -->
-            </ul>
-        </nav>
+<body class="centered-text">
+    <header class="main-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo-link">
+                <img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo" class="logo-image">
+            </a>
+            
+            <nav class="primary-navigation">
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                </button>
+                
+                <ul class="navigation-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">Our Story</a></li>
+                    <li><a href="menu.html" class="nav-link">Menu</a></li>
+                    <li><a href="deliveries.html" class="nav-link">Delivery</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main> <!-- Contains the main content of the page -->
-        <section class="story"> <!-- Section for the bakery's story -->
-            <h1>Our Story</h1> <!-- Main heading for the section -->
-            <img src="../Assests/familia.webp" alt="The family owners of the bakery smiling." style="display: block; margin: 20px auto; max-width: 500px; border-radius: 10px;"> <!-- Family image with inline styles -->
-            <article> <!-- Self-contained content about the bakery -->
-                <h2>From Our Family to Yours</h2> <!-- Subheading -->
-                <p class="responsive-text"> <!-- Paragraph with responsive text class -->
-                    Welcome to Sweet Delights Bakery, where every loaf, pastry, and cake tells a story of passion and tradition. Our journey began in a warm family kitchen in Polokwane, filled with the scent of freshly baked bread and the joy of shared recipes passed down through generations. What started as a family tradition of baking for holidays, birthdays, and special moments soon blossomed into a dream: to share that same comfort and delight with our entire community.
-                </p>
-                <h2>Our Mission & Values</h2> <!-- Another subheading -->
-                <p class="responsive-text"> <!-- Another responsive paragraph -->
-                    Our mission is to create moments of joy through delicious, handcrafted baked goods. We value community, quality, and freshness in everything we do. We are also proud to offer catering for weddings, birthdays, and corporate events.
-                </p>
-            </article>
+
+    <main class="main-content centered-text">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content centered-content">
+                <h1 class="main-heading">Our Story</h1>
+                <p class="hero-description">Three generations of baking passion in every bite</p>
+            </div>
         </section>
-        <section class="featured-products"> <!-- Section for featured products/staff -->
-            <h2>Meet Our Bakers</h2> <!-- Subheading for the bakers section -->
-            <div class="staff-container"> <!-- Container for staff members -->
-                <div class="staff-member"> <!-- Individual staff member container -->
-                    <img src="../Assests/istockphoto-1319936956-612x612.jpg" alt="Head Baker" class="staff-img"> <!-- Staff member image -->
-                    <p>Jane Doe<br><small>Head Baker</small></p> <!-- Staff member name and position -->
+
+        <section class="story section-container centered-text">
+            <div class="content-block centered-content">
+                <div class="story-grid centered-grid">
+                    <div class="story-content centered-content">
+                        <h2>From Our Family to Yours</h2>
+                        <p class="responsive-text">
+                            Welcome to Sweet Delights Bakery, where every loaf, pastry, and cake tells a story of passion and tradition. Our journey began in a warm family kitchen in Polokwane, filled with the scent of freshly baked bread and the joy of shared recipes passed down through generations.
+                        </p>
+                        
+                        <h2>Our Mission & Values</h2>
+                        <p class="responsive-text">
+                            Our mission is to create moments of joy through delicious, handcrafted baked goods using only the finest ingredients. We believe in supporting local farmers, sustainable practices, and bringing people together through the universal language of good food.
+                        </p>
+                        
+                        <div class="values-grid centered-grid">
+                            <div class="value-item centered-content">
+                                <i class="fas fa-heart"></i>
+                                <h3>Quality</h3>
+                                <p>Only the finest ingredients in every creation</p>
+                            </div>
+                            <div class="value-item centered-content">
+                                <i class="fas fa-users"></i>
+                                <h3>Community</h3>
+                                <p>Supporting local and building connections</p>
+                            </div>
+                            <div class="value-item centered-content">
+                                <i class="fas fa-leaf"></i>
+                                <h3>Sustainability</h3>
+                                <p>Eco-friendly practices and local sourcing</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="story-image centered-content">
+                        <img src="../Assests/familia.webp" alt="The family owners of Sweet Delights Bakery smiling in the bakery" class="staff-img">
+                    </div>
                 </div>
-                <div class="staff-member"> <!-- Another staff member container -->
-                    <img src="../Assests/smiling-african-female-bakers-looking-600nw-2134710165.webp" alt="Pastry Chef" class="staff-img"> <!-- Staff member image -->
-                    <p>Emily White<br><small>Pastry Chef</small></p> <!-- Staff member name and position -->
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="featured-products section-container centered-text">
+            <h2 class="section-title">Meet Our Artisan Bakers</h2>
+            <div class="staff-container centered-grid">
+                <div class="staff-member centered-content">
+                    <img src="../Assests/istockphoto-1319936956-612x612.jpg" alt="Jane Doe, Head Baker at Sweet Delights" class="staff-img">
+                    <h3>Jane Doe</h3>
+                    <p class="role">Head Baker & Founder</p>
+                    <p>With over 20 years of experience, Jane brings traditional European techniques to every creation.</p>
                 </div>
-                <div class="staff-member"> <!-- Another staff member container -->
-                     <img src="../Assests/R.jpg" alt="Cake Decorator" class="staff-img"> <!-- Staff member image -->
-                    <p>John Smith<br><small>Cake Decorator</small></p> <!-- Staff member name and position -->
+                <div class="staff-member centered-content">
+                    <img src="../Assests/jane.jpg" alt="Emily White, Pastry Chef" class="staff-img">
+                    <h3>Emily White</h3>
+                    <p class="role">Pastry Chef</p>
+                    <p>French-trained pastry artist specializing in delicate pastries and custom cake designs.</p>
+                </div>
+                <div class="staff-member centered-content">
+                     <img src="../Assests/R.jpg" alt="John Smith, Master Cake Decorator" class="staff-img">
+                    <h3>John Smith</h3>
+                    <p class="role">Cake Decorator</p>
+                    <p>Transforming visions into edible art with intricate designs and flawless execution.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section section-container centered-text">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="accordion-container centered-content">
+                <div class="accordion-item centered-content">
+                    <button class="accordion-header centered-content">
+                        Do you offer gluten-free options?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content centered-content">
+                        <p>Yes! We offer a selection of gluten-free bread, pastries, and cakes. Please inquire about our daily gluten-free specials.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item centered-content">
+                    <button class="accordion-header centered-content">
+                        How far in advance should I order a custom cake?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content centered-content">
+                        <p>We recommend ordering custom cakes at least 48 hours in advance. For elaborate wedding cakes, 2-3 weeks notice is preferred.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item centered-content">
+                    <button class="accordion-header centered-content">
+                        Do you cater for special events?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content centered-content">
+                        <p>Absolutely! We provide catering for weddings, corporate events, and special occasions. Contact us for custom catering packages.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer> <!-- Defines the footer section of the page -->
-        <div class="socials"> <!-- Container for social media links -->
-            <!-- Correct Icon Classes --> <!-- Comment about icon classes -->
-            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a> <!-- Facebook link with icon -->
-            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a> <!-- Instagram link with icon -->
-            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a> <!-- Twitter link with icon -->
+
+    <footer class="main-footer centered-text">
+        <div class="footer-container">
+            <div class="footer-content centered-grid">
+                <div class="footer-section centered-content">
+                    <h3>Sweet Delights Bakery</h3>
+                    <p>Family-owned artisan bakery in Polokwane creating delicious bread, pastries, and custom cakes.</p>
+                </div>
+                
+                <div class="footer-section centered-content">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Pretorius Street, Polokwane</p>
+                    <p><i class="fas fa-phone"></i> 015 291 1234</p>
+                    <p><i class="fas fa-envelope"></i> orders@sweetdelights.co.za</p>
+                </div>
+                
+                <div class="footer-section centered-content">
+                    <h3>Follow Us</h3>
+                    <div class="social-links centered-text">
+                        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Add this to any page for real-time content -->
+              <div class="real-time centered-content">
+            <div class="real-time-widget">
+           <h3>Fresh Out of the Oven</h3>
+          <div id="freshItems">
+        <p>Loading today's fresh batches...</p>
+         </div>
+             <p class="update-time" id="updateTime"></p>
+</div>
+            <div class="footer-bottom centered-content">
+                <p>&copy; 2025 Sweet Delights Bakery. All rights reserved.</p>
+            </div>
         </div>
-        <p>&copy; 2025 Sweet Delights Bakery. All Rights Reserved.</p> <!-- Copyright information -->
     </footer>
-    <script> <!-- JavaScript for interactive functionality -->
-        const hamburger = document.querySelector('.hamburger'); // Selects the hamburger menu element
-        const navLinks = document.querySelector('.nav-links'); // Selects the navigation links element
-        hamburger.addEventListener('click', () => { // Adds click event listener to hamburger menu
-            navLinks.classList.toggle('active'); // Toggles the 'active' class on navigation links
-        });
-    </script>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/accordion.js"></script>
+    <!-- Add this to any page for real-time content -->
+     
+<script>
+// Real-time content updates
+function updateFreshItems() {
+    const items = [
+        'Sourdough Bread - Ready now!',
+        'Butter Croissants - Fresh batch',
+        'Chocolate Chip Cookies - Just baked',
+        'Multigrain Loaf - Coming soon'
+    ];
+    
+    const randomItems = items.sort(() => 0.5 - Math.random()).slice(0, 2);
+    const freshItems = document.getElementById('freshItems');
+    const updateTime = document.getElementById('updateTime');
+    
+    freshItems.innerHTML = randomItems.map(item => 
+        `<div class="fresh-item">🍞 ${item}</div>`
+    ).join('');
+    
+    updateTime.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+}
+
+// Update every 30 seconds
+updateFreshItems();
+setInterval(updateFreshItems, 30000);
+</script>
 </body>
 </html>

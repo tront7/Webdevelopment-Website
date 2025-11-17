@@ -1,87 +1,614 @@
-<!DOCTYPE html> <!-- Declares the document type and version of HTML (HTML5) -->
-<html lang="en"> <!-- Root element of the HTML page with language set to English -->
-<head> <!-- Contains meta information about the document -->
-    <meta charset="UTF-8"> <!-- Specifies the character encoding for the document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper rendering and touch zooming on mobile devices -->
-    <title>Contact Us | Sweet Delights Bakery</title> <!-- Sets the page title that appears in the browser tab -->
-    <link rel="stylesheet" href="../css/style.css"> <!-- Links the external CSS stylesheet -->
-    <!-- Correct & Stable Font Awesome Link --> <!-- Comment about the Font Awesome library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Links Font Awesome for icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet"> <!-- Links Google Fonts -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sweet Delights Bakery - Get in Touch</title>
+    <meta name="keywords" content="contact bakery, Sweet Delights Bakery, Polokwane bakery contact, custom cake orders, bakery inquiries, artisan bakery contact">
+    <meta name="description" content="Contact Sweet Delights Bakery in Polokwane. Visit our bakery, call 015 291 1234, or send us a message for orders and inquiries.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        .centered-text * {
+            text-align: center !important;
+        }
+        
+        /* Enhanced interactive styles */
+        .clickable-map:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .map-instruction {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .clickable-map {
+            display: block; 
+            margin: 20px auto; 
+            max-width: 400px; 
+            border-radius: 10px;
+        }
+        
+        .cta-button.primary {
+            margin-top: 15px;
+        }
+        
+        /* Enhanced form styles */
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(155, 60, 60, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .quick-links a:hover {
+            color: var(--primary-dark);
+            transform: translateX(5px);
+        }
+        
+        .phone-link:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Loading animation */
+        .submit-button.loading {
+            position: relative;
+            color: transparent;
+        }
+        
+        .submit-button.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin: -10px 0 0 -10px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-right-color: transparent;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Character counter */
+        .char-counter {
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+        
+        .char-counter.warning {
+            color: #ff9800;
+        }
+        
+        .char-counter.error {
+            color: #dc3545;
+        }
+        
+        /* Enhanced success message */
+        .form-success-message {
+            animation: slideDown 0.5s ease;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .form-success-message i {
+            font-size: 1.2rem;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Enhanced contact items */
+        .info-item:hover i {
+            transform: scale(1.2);
+            color: var(--primary-dark);
+        }
+        
+        .info-item i {
+            transition: all 0.3s ease;
+        }
+        
+        /* Business hours status */
+        .hours-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .hours-status.open {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .hours-status.closed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
 </head>
-<body> <!-- Contains the visible content of the webpage -->
-    <header> <!-- Defines the header section of the page -->
-        <a href="../index.html"><img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo"></a> <!-- Logo that links back to the home page -->
-        <nav> <!-- Defines navigation links -->
-            <div class="hamburger"> <!-- Container for the hamburger menu icon (mobile view) -->
-                <span></span> <!-- First line of the hamburger icon -->
-                <span></span> <!-- Second line of the hamburger icon -->
-                <span></span> <!-- Third line of the hamburger icon -->
-            </div>
-            <ul class="nav-links"> <!-- Unordered list for navigation links -->
-                <li><a href="../index.html">Home</a></li> <!-- Home page link -->
-                <li><a href="about.html">About</a></li> <!-- About page link -->
-                <li><a href="menu.html">Menu</a></li> <!-- Menu page link -->
-                <!-- New Deliveries Link --> <!-- Comment indicating this is a new link -->
-                <li><a href="deliveries.html">Deliveries</a></li> <!-- Deliveries page link -->
-                <li><a href="contact.html">Contact</a></li> <!-- Current page link (contact) -->
-            </ul>
-        </nav>
+<body class="centered-text">
+    <header class="main-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo-link">
+                <img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo" class="logo-image">
+            </a>
+            
+            <nav class="primary-navigation">
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                </button>
+                
+                <ul class="navigation-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">Our Story</a></li>
+                    <li><a href="menu.html" class="nav-link">Menu</a></li>
+                    <li><a href="deliveries.html" class="nav-link">Delivery</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main> <!-- Contains the main content of the page -->
-        <section class="contact-details"> <!-- Section for contact information -->
-            <h1>Get In Touch</h1> <!-- Main heading for the section -->
-            <p id="myParagraph">We'd love to hear from you! Visit us in-store or send us a message below.</p> <!-- Introductory paragraph with specific ID -->
-            <form name="contact" method="POST" data-netlify="true" class="contact-form"> <!-- Contact form with Netlify integration -->
-                <h2>Send a Message</h2> <!-- Form heading -->
-                <table> <!-- Table used for form layout -->
-                    <tr> <!-- Table row for name field -->
-                        <td><label for="name">Your Name:</label></td> <!-- Label for name input -->
-                        <td><input type="text" id="name" name="name" required></td> <!-- Text input for name -->
-                    </tr>
-                    <tr> <!-- Table row for email field -->
-                        <td><label for="email">Your Email:</label></td> <!-- Label for email input -->
-                        <td><input type="email" id="email" name="email" required></td> <!-- Email input field -->
-                    </tr>
-                    <tr> <!-- Table row for message field -->
-                        <td><label for="message">Message:</label></td> <!-- Label for message textarea -->
-                        <td><textarea id="message" name="message" rows="5" required></textarea></td> <!-- Textarea for message -->
-                    </tr>
-                    <tr> <!-- Table row for submit button -->
-                        <td></td> <!-- Empty cell for alignment -->
-                        <td style="text-align: right;"><input type="submit" value="Send Message"></td> <!-- Submit button aligned to the right -->
-                    </tr>
-                </table>
-            </form>
-            <div class="info-center"> <!-- Container for contact information -->
-                <h2>Our Details</h2> <!-- Subheading for contact details -->
-                <p><strong>Address:</strong> 123 Pretorius Street, Polokwane, 0700</p> <!-- Address information -->
-                <p><strong>Phone:</strong> 015 291 1234</p> <!-- Phone number -->
-                <p><strong>Email:</strong> orders@sweetdelights.co.za</p> <!-- Email address -->
-                <img src="../Assests/unnamed.jpg" alt="Map showing the location of Polokwane in South Africa" style="display: block; margin: 20px auto; max-width: 300px; border-radius: 10px;"> <!-- Map image with inline styles -->
-                <br> <!-- Line break for spacing -->
-                <h2>Opening Hours</h2> <!-- Subheading for opening hours -->
-                <p>Monday - Friday: 7:00 AM - 5:00 PM</p> <!-- Weekday hours -->
-                <p>Saturday: 8:00 AM - 3:00 PM</p> <!-- Saturday hours -->
-                <p>Sunday: Closed</p> <!-- Sunday hours -->
+
+    <main class="main-content centered-text">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content centered-content">
+                <h1 class="main-heading">Contact Us</h1>
+                <p class="hero-description">We'd love to hear from you! Visit us in-store or send us a message.</p>
+                <div class="current-status centered-content" style="margin-top: 1rem;">
+                    <span id="businessStatus" class="hours-status"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-details section-container centered-text">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <p>Have questions about our products, custom orders, or catering? We're here to help!</p>
+                    
+                    <form name="contact" method="POST" data-netlify="true" class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="015 291 1234">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <select id="subject" name="subject" class="form-select">
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="custom-order">Custom Cake Order</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="delivery">Delivery Question</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" rows="5" class="form-textarea" placeholder="Tell us how we can help you..." required maxlength="1000"></textarea>
+                            <div class="char-counter" id="charCounter">0/1000 characters</div>
+                        </div>
+                        
+                        <div class="form-group" style="text-align: left;">
+                            <label class="form-label">
+                                <input type="checkbox" id="newsletter" name="newsletter" checked>
+                                Subscribe to our newsletter for special offers and updates
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-button" id="submitButton">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>Visit Our Bakery</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address</strong>
+                                <p>123 Pretorius Street, Polokwane, 0700</p>
+                                <small style="color: var(--text-light);">Free parking available</small>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>015 291 1234</p>
+                                <small style="color: var(--text-light);">Mon-Fri 7AM-5PM, Sat 8AM-3PM</small>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>orders@sweetdelights.co.za</p>
+                                <small style="color: var(--text-light);">We respond within 24 hours</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Opening Hours <span id="hoursStatus" class="hours-status"></span></h3>
+                        <div class="hours-item">
+                            <span>Monday - Friday</span>
+                            <span>7:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Saturday</span>
+                            <span>8:00 AM - 3:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Sunday</span>
+                            <span>Closed</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Public Holidays</span>
+                            <span>9:00 AM - 1:00 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="menu.html"><i class="fas fa-utensils"></i> View Our Menu</a></li>
+                            <li><a href="deliveries.html"><i class="fas fa-truck"></i> Delivery Information</a></li>
+                            <li><a href="about.html"><i class="fas fa-history"></i> Learn About Us</a></li>
+                            <li><a href="../index.html"><i class="fas fa-home"></i> Back to Home</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section centered-content">
+                <h2>Find Us</h2>
+                <p class="map-instruction">Click on the map to get directions</p>
+                <div class="map-container centered-content">
+                    <a href="https://maps.app.goo.gl/f11GVkvb6tM9BX616" target="_blank" class="map-link">
+                        <img src="../Assests/unnamed.jpg" 
+                             alt="Map showing the location of Sweet Delights Bakery in Polokwane" 
+                             class="clickable-map">
+                    </a>
+                    <div class="map-overlay centered-content">
+                        <p><strong>Easy to Find:</strong> Located on Pretorius Street in central Polokwane. Ample parking available.</p>
+                        <a href="https://maps.app.goo.gl/f11GVkvb6tM9BX616" target="_blank" class="cta-button primary">
+                            <i class="fas fa-map-marker-alt"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Order Section -->
+        <section class="emergency-order centered-text">
+            <div class="section-container centered-content">
+                <h2>Need a Last-Minute Order?</h2>
+                <p>Call us directly for urgent custom orders or same-day pickup</p>
+                <div class="emergency-contact centered-content">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:0152911234" class="phone-link">015 291 1234</a>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                    <i class="fas fa-clock"></i> Same-day orders accepted until 12 PM
+                </p>
             </div>
         </section>
     </main>
-    <footer> <!-- Defines the footer section of the page -->
-        <div class="socials"> <!-- Container for social media links -->
-            <!-- Correct Icon Classes --> <!-- Comment about icon classes -->
-            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a> <!-- Facebook link with icon -->
-            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a> <!-- Instagram link with icon -->
-            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a> <!-- Twitter link with icon -->
+
+    <footer class="main-footer centered-text">
+        <div class="footer-container">
+            <div class="footer-content centered-grid">
+                <div class="footer-section centered-content">
+                    <h3>Sweet Delights Bakery</h3>
+                    <p>Family-owned artisan bakery in Polokwane creating delicious bread, pastries, and custom cakes.</p>
+                </div>
+                
+                <div class="footer-section centered-content">
+                    <h3>Follow Us</h3>
+                    <div class="social-links centered-text">
+                        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom centered-content">
+                <p>&copy; 2025 Sweet Delights Bakery. All rights reserved.</p>
+            </div>
         </div>
-        <p>&copy; 2025 Sweet Delights Bakery. All Rights Reserved.</p> <!-- Copyright information -->
     </footer>
-    <script> <!-- JavaScript for interactive functionality -->
-        const hamburger = document.querySelector('.hamburger'); // Selects the hamburger menu element
-        const navLinks = document.querySelector('.nav-links'); // Selects the navigation links element
-        hamburger.addEventListener('click', () => { // Adds click event listener to hamburger menu
-            navLinks.classList.toggle('active'); // Toggles the 'active' class on navigation links
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.querySelector('.contact-form');
+        const messageTextarea = document.getElementById('message');
+        const charCounter = document.getElementById('charCounter');
+        const submitButton = document.getElementById('submitButton');
+        const businessStatus = document.getElementById('businessStatus');
+        const hoursStatus = document.getElementById('hoursStatus');
+        
+        // Character counter for message
+        messageTextarea.addEventListener('input', function() {
+            const length = this.value.length;
+            charCounter.textContent = `${length}/1000 characters`;
+            
+            if (length > 800) {
+                charCounter.classList.add('warning');
+                charCounter.classList.remove('error');
+            } else if (length > 950) {
+                charCounter.classList.remove('warning');
+                charCounter.classList.add('error');
+            } else {
+                charCounter.classList.remove('warning', 'error');
+            }
         });
+        
+        // Business hours status
+        function updateBusinessStatus() {
+            const now = new Date();
+            const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+            
+            let isOpen = false;
+            let statusText = '';
+            
+            if (day === 0) { // Sunday
+                statusText = 'Closed Today';
+            } else if (day === 6) { // Saturday
+                isOpen = hour >= 8 && hour < 15;
+                statusText = isOpen ? 'Open Now' : 'Closed Now';
+            } else { // Weekdays
+                isOpen = hour >= 7 && hour < 17;
+                statusText = isOpen ? 'Open Now' : 'Closed Now';
+            }
+            
+            const statusClass = isOpen ? 'open' : 'closed';
+            businessStatus.textContent = statusText;
+            businessStatus.className = `hours-status ${statusClass}`;
+            hoursStatus.textContent = statusText;
+            hoursStatus.className = `hours-status ${statusClass}`;
+        }
+        
+        updateBusinessStatus();
+        // Update status every minute
+        setInterval(updateBusinessStatus, 60000);
+        
+        // Enhanced form validation and submission
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Clear previous errors
+                clearErrors();
+                
+                // Validate fields
+                const name = document.getElementById('name');
+                const email = document.getElementById('email');
+                const message = document.getElementById('message');
+                const subject = document.getElementById('subject');
+                
+                let isValid = true;
+                
+                // Name validation
+                if (!name.value.trim()) {
+                    showError(name, 'Please enter your name');
+                    isValid = false;
+                } else if (name.value.trim().length < 2) {
+                    showError(name, 'Name must be at least 2 characters long');
+                    isValid = false;
+                }
+                
+                // Email validation
+                if (!email.value.trim()) {
+                    showError(email, 'Please enter your email');
+                    isValid = false;
+                } else if (!isValidEmail(email.value)) {
+                    showError(email, 'Please enter a valid email address');
+                    isValid = false;
+                }
+                
+                // Subject validation
+                if (!subject.value) {
+                    showError(subject, 'Please select a subject');
+                    isValid = false;
+                }
+                
+                // Message validation
+                if (!message.value.trim()) {
+                    showError(message, 'Please enter your message');
+                    isValid = false;
+                } else if (message.value.trim().length < 10) {
+                    showError(message, 'Message must be at least 10 characters long');
+                    isValid = false;
+                } else if (message.value.trim().length > 1000) {
+                    showError(message, 'Message must be less than 1000 characters');
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Show loading state
+                    submitButton.classList.add('loading');
+                    submitButton.disabled = true;
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        // Show success message
+                        showSuccess('Your message has been sent successfully! We will respond within 24 hours.');
+                        
+                        // Reset form
+                        contactForm.reset();
+                        charCounter.textContent = '0/1000 characters';
+                        charCounter.classList.remove('warning', 'error');
+                        
+                        // Reset button state
+                        submitButton.classList.remove('loading');
+                        submitButton.disabled = false;
+                        
+                        // In real scenario, this would be handled by Netlify
+                        // contactForm.submit();
+                    }, 2000);
+                }
+            });
+        }
+        
+        // Real-time validation
+        const formInputs = document.querySelectorAll('.form-input, .form-textarea, .form-select');
+        formInputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                validateField(this);
+            });
+        });
+        
+        function validateField(field) {
+            const value = field.value.trim();
+            
+            switch(field.id) {
+                case 'name':
+                    if (value && value.length < 2) {
+                        showError(field, 'Name must be at least 2 characters long');
+                    }
+                    break;
+                case 'email':
+                    if (value && !isValidEmail(value)) {
+                        showError(field, 'Please enter a valid email address');
+                    }
+                    break;
+                case 'message':
+                    if (value && value.length < 10) {
+                        showError(field, 'Message must be at least 10 characters long');
+                    }
+                    break;
+            }
+        }
+        
+        function showError(field, message) {
+            field.classList.add('field-error');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'validation-error';
+            errorDiv.textContent = message;
+            field.parentNode.appendChild(errorDiv);
+            
+            // Scroll to error
+            field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        function clearErrors() {
+            const errors = document.querySelectorAll('.validation-error');
+            errors.forEach(error => error.remove());
+            
+            const errorFields = document.querySelectorAll('.field-error');
+            errorFields.forEach(field => field.classList.remove('field-error'));
+        }
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        function showSuccess(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'form-success-message';
+            successDiv.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <div>${message}</div>
+            `;
+            
+            const form = document.querySelector('.contact-form');
+            form.insertBefore(successDiv, form.firstChild);
+            
+            setTimeout(() => {
+                successDiv.remove();
+            }, 5000);
+        }
+        
+        // Add hover effect to clickable map
+        const clickableMap = document.querySelector('.clickable-map');
+        if (clickableMap) {
+            clickableMap.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+            clickableMap.style.cursor = 'pointer';
+            clickableMap.style.borderRadius = '10px';
+        }
+        
+        // Add transitions to interactive elements
+        const infoCards = document.querySelectorAll('.info-card');
+        const quickLinks = document.querySelectorAll('.quick-links a');
+        
+        infoCards.forEach(card => {
+            card.style.transition = 'all 0.3s ease';
+        });
+        
+        quickLinks.forEach(link => {
+            link.style.transition = 'all 0.3s ease';
+        });
+    });
     </script>
+
+    <script src="../js/navigation.js"></script>
 </body>
 </html>

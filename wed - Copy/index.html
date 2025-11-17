@@ -1,64 +1,534 @@
-<!DOCTYPE html> <!-- Declares the document type and version of HTML (HTML5) -->
-<html lang="en"> <!-- Opens the HTML document and sets the language to English -->
-<head> <!-- Contains meta-information about the HTML document -->
-    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on all devices for responsiveness -->
-    <title>Sweet Delights Bakery | Artisan Breads, Pastries & Cakes in Polokwane</title> <!-- Sets the title of the webpage shown in the browser tab -->
-    <link rel="stylesheet" href="./css/Style.css"> <!-- Links an external CSS file for styling -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Links Font Awesome for icon usage -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet"> <!-- Imports Google Fonts for typography -->
-</head> <!-- Closes the head section -->
-<body> <!-- Opens the body of the document which contains all visible content -->
-<header> <!-- Defines the header section of the page -->
-    <a href="index.html"> <!-- Creates a clickable logo that links to the homepage -->
-        <img src="./Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Logo" width="150" height="150"> <!-- Displays the logo image with specified dimensions -->
-    </a> <!-- Closes the anchor tag -->
-    <nav> <!-- Begins the navigation bar -->
-        <div class="hamburger"> <!-- A container for the mobile menu icon (hamburger menu) -->
-            <span></span> <!-- First line of the hamburger icon -->
-            <span></span> <!-- Second line of the hamburger icon -->
-            <span></span> <!-- Third line of the hamburger icon -->
-        </div> <!-- Closes the hamburger menu container -->
-        <ul class="nav-links"> <!-- Unordered list of navigation links with a class for styling/JS targeting -->
-            <li><a href="index.html">Home</a></li> <!-- Link to Home page -->
-            <li><a href="./page/about.html">About</a></li> <!-- Link to About page -->
-            <li><a href="./page/menu.html">Menu</a></li> <!-- Link to Menu page -->
-            <li><a href="./page/deliveries.html">Deliveries</a></li> <!-- Link to Deliveries page -->
-            <li><a href="./page/contact.html">Contact</a></li> <!-- Link to Contact page -->
-        </ul> <!-- Closes the navigation list -->
-    </nav> <!-- Closes the navigation bar -->
-</header> <!-- Closes the header section -->
-<main> <!-- Defines the main content of the page -->
-    <section class="hero" style="text-align: center;"> <!-- A section for the hero content, centered text -->
-        <picture> <!-- Container for responsive images (though only one image is used here) -->
-            <img src="./Assests/bread.jpg" media="(min-width: 322x)" style="display: block; margin: 20px auto; max-width: 320px; border-radius: 10px;"> <!-- Displays an image of bread with inline styles for layout and rounded corners -->
-        </picture> <!-- Closes the picture element -->
-        <h1>Handcrafted Goodness, Baked Fresh Daily.</h1> <!-- Main headline for the hero section -->
-        <p class="responsive-text">Your local artisan bakery in the heart of Polokwane.</p> <!-- Paragraph with a class for responsive text styling -->
-    </section> <!-- Closes the hero section -->
-</main> <!-- Closes the main content -->
-<footer> <!-- Opens the footer section -->
-    <div class="socials"> <!-- Container for social media links -->
-        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a> <!-- Facebook icon link, opens in new tab -->
-        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a> <!-- Instagram icon link, opens in new tab -->
-        <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a> <!-- Twitter icon link, opens in new tab -->
-    </div> <!-- Closes the social icons container -->
-    <p>&copy; 2025 Sweet Delights Bakery. All Rights Reserved.</p> <!-- Copyright notice -->
-</footer> <!-- Closes the footer -->
-<script> <!-- Begins JavaScript block -->
-    // Contains client-side JavaScript code
-    const hamburger = document.querySelector('.hamburger'); 
-    // Selects the HTML element with the class 'hamburger'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Delights Bakery | Fresh Artisan Bread & Pastries | Polokwane</title>
+    <meta name="description" content="Sweet Delights Bakery in Polokwane - Fresh artisan bread, pastries, custom cakes. Family-owned bakery with daily specials and delivery service.">
+    <meta name="keywords" content="artisan bakery Polokwane, fresh bread, custom cakes, pastries, wedding cakes, bakery delivery, gluten-free options">
+    <meta name="author" content="Sweet Delights Bakery">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Only keeping essential styles that can't be moved to external CSS */
+        .centered-text * {
+            text-align: center !important;
+        }
+        
+        /* Enhanced interactive styles */
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .special-offer-banner {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .hero-image {
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+        
+        /* Business status indicator */
+        .business-status {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 10px;
+            background: #d4edda;
+            color: #155724;
+            animation: fadeIn 1s ease;
+        }
+        
+        .business-status.closed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Enhanced newsletter form */
+        .newsletter-form input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(155, 60, 60, 0.2);
+        }
+        
+        /* Quick stats animation */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-item {
+            background: var(--white);
+            padding: 2rem 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="centered-text">
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo" class="logo-image">
+            </a>
+            
+            <nav class="primary-navigation">
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                </button>
+                
+                <ul class="navigation-links">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="page/about.html" class="nav-link">Our Story</a></li>
+                    <li><a href="page/menu.html" class="nav-link">Menu</a></li>
+                    <li><a href="page/deliveries.html" class="nav-link">Delivery</a></li>
+                    <li><a href="page/contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    const navLinks = document.querySelector('.nav-links'); 
-    // Selects the HTML element with the class 'nav-links' (the list of navigation items)
+    <main class="main-content centered-text">
+        <section class="hero-section">
+            <div class="hero-content centered-content">
+                <div class="special-offer-banner">
+                    <p id="dailySpecialDisplay" class="special-text">Today's Special: Fresh Sourdough Bread - 20% OFF!</p>
+                    <small id="businessStatus" class="business-status"></small>
+                </div>
+                
+                <div class="hero-image-container centered-content">
+                    <img src="Assests/bread.jpg" alt="Fresh artisan bread" class="hero-image">
+                </div>
+                
+                <div class="hero-text-content centered-content">
+                    <h1 class="main-heading">Handcrafted Bakery Goods, Fresh Daily</h1>
+                    <p class="hero-description">Family-owned artisan bakery in Polokwane creating delicious bread, pastries, and custom cakes with love and tradition.</p>
+                    
+                    <div class="current-time-display centered-content">
+                        <p id="liveDateTime" class="time-text"></p>
+                    </div>
+                    
+                    <div class="hero-actions centered-content">
+                        <a href="page/menu.html" class="cta-button primary">View Menu</a>
+                        <a href="page/contact.html" class="cta-button secondary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    hamburger.addEventListener('click', () => { 
-        // Adds an event listener that executes a function when the 'hamburger' element is clicked
+        <!-- Quick Stats Section -->
+        <section class="section-container centered-text">
+            <div class="stats-grid">
+                <div class="stat-item centered-content">
+                    <span class="stat-number" id="happyCustomers">0</span>
+                    <span class="stat-label">Happy Customers</span>
+                </div>
+                <div class="stat-item centered-content">
+                    <span class="stat-number" id="yearsExperience">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item centered-content">
+                    <span class="stat-number" id="dailyBakes">0</span>
+                    <span class="stat-label">Daily Bakes</span>
+                </div>
+                <div class="stat-item centered-content">
+                    <span class="stat-number" id="productsAvailable">0</span>
+                    <span class="stat-label">Products Available</span>
+                </div>
+            </div>
+        </section>
 
-        navLinks.classList.toggle('active'); 
-        // Toggles the 'active' class on the 'nav-links' element, typically used to show/hide the menu on mobile
-    });
-</script> <!-- Ends JavaScript block -->
-</body> <!-- Closes the body section -->
-</html> <!-- Closes the HTML document -->
+        <!-- Featured Products Section -->
+        <section class="featured-products section-container centered-text">
+            <h2 class="section-title">Our Signature Creations</h2>
+            <div class="products-grid centered-grid">
+                <div class="product-card centered-content">
+                    <img src="Assests/Sourdough Loaf.jpg" alt="Artisan Sourdough Bread" class="product-image">
+                    <h3>Artisan Sourdough</h3>
+                    <p>Freshly baked daily with 24-hour natural fermentation</p>
+                    <span class="price">R45.00</span>
+                    <button class="cta-button secondary" style="margin-top: 1rem; padding: 0.5rem 1rem;" onclick="addToCart('Artisan Sourdough', 45.00)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card centered-content">
+                    <img src="Assests/Butter Croissant.jpg" alt="Butter Croissants" class="product-image">
+                    <h3>Butter Croissants</h3>
+                    <p>Flaky, buttery layers made with premium French butter</p>
+                    <span class="price">R25.00</span>
+                    <button class="cta-button secondary" style="margin-top: 1rem; padding: 0.5rem 1rem;" onclick="addToCart('Butter Croissants', 25.00)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card centered-content">
+                    <img src="Assests/Carrot Cake.jpg" alt="Carrot Cake" class="product-image">
+                    <h3>Carrot Cake</h3>
+                    <p>Moist cake with cream cheese frosting and walnuts</p>
+                    <span class="price">R40.00 / R350.00</span>
+                    <button class="cta-button secondary" style="margin-top: 1rem; padding: 0.5rem 1rem;" onclick="addToCart('Carrot Cake Slice', 40.00)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section-container centered-text">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid centered-grid">
+                <div class="testimonial-card centered-content">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The best bakery in Polokwane! Their sourdough bread is absolutely amazing and always fresh."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <p>- Sarah M.</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card centered-content">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"I ordered a custom birthday cake and it was both beautiful and delicious. Highly recommend!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <p>- James T.</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card centered-content">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"Their delivery service is prompt and the pastries always arrive in perfect condition."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <p>- Linda K.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section centered-text">
+            <div class="section-container centered-content">
+                <div class="newsletter-content centered-content">
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to our newsletter for exclusive offers and new product announcements</p>
+                    <form class="newsletter-form centered-content" id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required id="newsletterEmail">
+                        <button type="submit" class="cta-button primary">Subscribe</button>
+                    </form>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
+                        <i class="fas fa-shield-alt"></i> We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer centered-text">
+        <div class="footer-container">
+            <div class="footer-content centered-grid">
+                <div class="footer-section centered-content">
+                    <h3>Sweet Delights Bakery</h3>
+                    <p>Family-owned artisan bakery in Polokwane creating delicious bread, pastries, and custom cakes with love and tradition.</p>
+                </div>
+                
+                <div class="footer-section centered-content">
+                    <h3>Quick Links</h3>
+                    <ul class="centered-content">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="page/about.html">Our Story</a></li>
+                        <li><a href="page/menu.html">Menu</a></li>
+                        <li><a href="page/deliveries.html">Delivery</a></li>
+                        <li><a href="page/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section centered-content">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Pretorius Street, Polokwane, 0700</p>
+                    <p><i class="fas fa-phone"></i> 015 291 1234</p>
+                    <p><i class="fas fa-envelope"></i> orders@sweetdelights.co.za</p>
+                </div>
+                
+                <div class="footer-section centered-content">
+                    <h3>Follow Us</h3>
+                    <div class="social-links centered-text">
+                        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom centered-content">
+                <p>&copy; 2025 Sweet Delights Bakery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Notification -->
+    <div id="cartNotification" class="cart-notification" style="display: none;">
+        <div class="cart-message">
+            <i class="fas fa-check-circle"></i>
+            <span>Item added to cart!</span>
+        </div>
+    </div>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/live-content.js"></script>
+    <script>
+        // Enhanced functionality for homepage
+        document.addEventListener('DOMContentLoaded', function() {
+            // Business status indicator
+            function updateBusinessStatus() {
+                const now = new Date();
+                const day = now.getDay();
+                const hour = now.getHours();
+                const statusElement = document.getElementById('businessStatus');
+                
+                let isOpen = false;
+                let statusText = '';
+                
+                if (day === 0) { // Sunday
+                    statusText = 'Closed Today';
+                } else if (day === 6) { // Saturday
+                    isOpen = hour >= 8 && hour < 15;
+                    statusText = isOpen ? 'Open Now' : 'Closed Now';
+                } else { // Weekdays
+                    isOpen = hour >= 7 && hour < 17;
+                    statusText = isOpen ? 'Open Now' : 'Closed Now';
+                }
+                
+                statusElement.textContent = statusText;
+                statusElement.className = `business-status ${isOpen ? '' : 'closed'}`;
+            }
+            
+            updateBusinessStatus();
+            setInterval(updateBusinessStatus, 60000);
+            
+            // Animated statistics counter
+            function animateCounter(element, target, duration = 2000) {
+                let start = 0;
+                const increment = target / (duration / 16);
+                const timer = setInterval(() => {
+                    start += increment;
+                    if (start >= target) {
+                        element.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(start);
+                    }
+                }, 16);
+            }
+            
+            // Initialize statistics
+            setTimeout(() => {
+                animateCounter(document.getElementById('happyCustomers'), 1250);
+                animateCounter(document.getElementById('yearsExperience'), 15);
+                animateCounter(document.getElementById('dailyBakes'), 200);
+                animateCounter(document.getElementById('productsAvailable'), 45);
+            }, 1000);
+            
+            // Enhanced newsletter form
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('newsletterEmail').value;
+                    
+                    // Simulate subscription
+                    const button = this.querySelector('button');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+                    button.disabled = true;
+                    
+                    setTimeout(() => {
+                        button.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+                        button.style.background = '#28a745';
+                        
+                        // Reset after 2 seconds
+                        setTimeout(() => {
+                            button.innerHTML = originalText;
+                            button.disabled = false;
+                            button.style.background = '';
+                            newsletterForm.reset();
+                        }, 2000);
+                    }, 1500);
+                });
+            }
+            
+            // Add transitions to interactive elements
+            const productCards = document.querySelectorAll('.product-card');
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            const socialLinks = document.querySelectorAll('.social-link');
+            
+            productCards.forEach(card => {
+                card.style.transition = 'all 0.3s ease';
+            });
+            
+            testimonialCards.forEach(card => {
+                card.style.transition = 'all 0.3s ease';
+            });
+            
+            socialLinks.forEach(link => {
+                link.style.transition = 'all 0.3s ease';
+            });
+            
+            // Daily special rotation
+            const specials = [
+                "Today's Special: Fresh Sourdough Bread - 20% OFF!",
+                "Special Offer: Buy 2 Croissants, Get 1 Free!",
+                "Weekend Deal: Family Bread Bundle - Save 15%",
+                "New: Gluten-Free Banana Bread - Try It Today!",
+                "Limited Time: Custom Cakes 10% Off This Week"
+            ];
+            
+            let currentSpecial = 0;
+            const specialDisplay = document.getElementById('dailySpecialDisplay');
+            
+            // Rotate specials every 5 seconds
+            setInterval(() => {
+                currentSpecial = (currentSpecial + 1) % specials.length;
+                specialDisplay.style.opacity = '0';
+                
+                setTimeout(() => {
+                    specialDisplay.textContent = specials[currentSpecial];
+                    specialDisplay.style.opacity = '1';
+                }, 500);
+            }, 5000);
+        });
+        
+        // Add to cart functionality
+        function addToCart(productName, price) {
+            const notification = document.getElementById('cartNotification');
+            notification.style.display = 'block';
+            notification.style.animation = 'slideIn 0.5s ease';
+            
+            // Update notification message
+            notification.querySelector('span').textContent = `${productName} added to cart!`;
+            
+            // Hide notification after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.5s ease';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 500);
+            }, 3000);
+            
+            // In a real application, you would add the item to a cart object/store
+            console.log(`Added to cart: ${productName} - R${price}`);
+        }
+        
+        // Add CSS for cart notification
+        const style = document.createElement('style');
+        style.textContent = `
+            .cart-notification {
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--primary-color);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: var(--border-radius);
+                box-shadow: var(--box-shadow);
+                z-index: 1000;
+                animation: slideIn 0.5s ease;
+            }
+            
+            .cart-message {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+            
+            .rating {
+                color: #ffc107;
+                margin-bottom: 0.5rem;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
