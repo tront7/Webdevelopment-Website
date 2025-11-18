@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Document Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Delights Bakery | Fresh Artisan Bread & Pastries | Polokwane</title>
+    
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Sweet Delights Bakery in Polokwane - Fresh artisan bread, pastries, custom cakes. Family-owned bakery with daily specials and delivery service.">
     <meta name="keywords" content="artisan bakery Polokwane, fresh bread, custom cakes, pastries, wedding cakes, bakery delivery, gluten-free options">
     <meta name="author" content="Sweet Delights Bakery">
     
     <!-- CSS Links -->
+    <!-- External stylesheets for fonts, icons, and main styles -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Inline CSS for critical styles and interactive elements -->
     <style>
-        /* Only keeping essential styles that can't be moved to external CSS */
+        /* Force text centering for all elements with this class */
         .centered-text * {
             text-align: center !important;
         }
         
-        /* Enhanced interactive styles */
+        /* Enhanced interactive styles for product cards */
         .product-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
+        /* Hover effects for testimonial cards */
         .testimonial-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
+        /* Animation for special offer banner */
         .special-offer-banner {
             animation: pulse 2s infinite;
         }
         
+        /* Pulse animation for attention-grabbing elements */
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.02); }
             100% { transform: scale(1); }
         }
         
+        /* Smooth transition for hero image */
         .hero-image {
             transition: transform 0.5s ease;
         }
         
+        /* Hover effect for hero image */
         .hero-image:hover {
             transform: scale(1.02);
         }
         
+        /* Hover effect for social media links */
         .social-link:hover {
             transform: translateY(-3px) scale(1.1);
         }
         
-        /* Business status indicator */
+        /* Business status indicator styling */
         .business-status {
             display: inline-block;
             padding: 6px 12px;
@@ -64,23 +76,25 @@
             animation: fadeIn 1s ease;
         }
         
+        /* Closed status styling */
         .business-status.closed {
             background: #f8d7da;
             color: #721c24;
         }
         
+        /* Fade in animation for status indicator */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
         
-        /* Enhanced newsletter form */
+        /* Enhanced focus state for newsletter form */
         .newsletter-form input:focus {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(155, 60, 60, 0.2);
         }
         
-        /* Quick stats animation */
+        /* Grid layout for statistics section */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -88,6 +102,7 @@
             margin: 3rem 0;
         }
         
+        /* Individual stat item styling */
         .stat-item {
             background: var(--white);
             padding: 2rem 1rem;
@@ -96,10 +111,12 @@
             transition: var(--transition);
         }
         
+        /* Hover effect for stat items */
         .stat-item:hover {
             transform: translateY(-5px);
         }
         
+        /* Large number styling for statistics */
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
@@ -107,6 +124,7 @@
             display: block;
         }
         
+        /* Label styling for statistics */
         .stat-label {
             color: var(--text-light);
             font-size: 0.9rem;
@@ -114,19 +132,24 @@
     </style>
 </head>
 <body class="centered-text">
+    <!-- Main Header Section -->
     <header class="main-header">
         <div class="header-container">
+            <!-- Logo linking to homepage -->
             <a href="index.html" class="logo-link">
                 <img src="Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo" class="logo-image">
             </a>
             
+            <!-- Primary Navigation -->
             <nav class="primary-navigation">
+                <!-- Mobile Menu Toggle Button -->
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
                     <span class="menu-bar"></span>
                     <span class="menu-bar"></span>
                     <span class="menu-bar"></span>
                 </button>
                 
+                <!-- Navigation Links -->
                 <ul class="navigation-links">
                     <li><a href="index.html" class="nav-link active">Home</a></li>
                     <li><a href="page/about.html" class="nav-link">Our Story</a></li>
@@ -138,26 +161,33 @@
         </div>
     </header>
 
+    <!-- Main Content Area -->
     <main class="main-content centered-text">
+        <!-- Hero Section with key messaging -->
         <section class="hero-section">
             <div class="hero-content centered-content">
+                <!-- Special Offer Banner with Dynamic Content -->
                 <div class="special-offer-banner">
                     <p id="dailySpecialDisplay" class="special-text">Today's Special: Fresh Sourdough Bread - 20% OFF!</p>
                     <small id="businessStatus" class="business-status"></small>
                 </div>
                 
+                <!-- Hero Image -->
                 <div class="hero-image-container centered-content">
                     <img src="Assests/bread.jpg" alt="Fresh artisan bread" class="hero-image">
                 </div>
                 
+                <!-- Hero Text Content -->
                 <div class="hero-text-content centered-content">
                     <h1 class="main-heading">Handcrafted Bakery Goods, Fresh Daily</h1>
                     <p class="hero-description">Family-owned artisan bakery in Polokwane creating delicious bread, pastries, and custom cakes with love and tradition.</p>
                     
+                    <!-- Live Date and Time Display -->
                     <div class="current-time-display centered-content">
                         <p id="liveDateTime" class="time-text"></p>
                     </div>
                     
+                    <!-- Call-to-Action Buttons -->
                     <div class="hero-actions centered-content">
                         <a href="page/menu.html" class="cta-button primary">View Menu</a>
                         <a href="page/contact.html" class="cta-button secondary">Order Now</a>
@@ -192,6 +222,7 @@
         <section class="featured-products section-container centered-text">
             <h2 class="section-title">Our Signature Creations</h2>
             <div class="products-grid centered-grid">
+                <!-- Product Card 1: Sourdough Bread -->
                 <div class="product-card centered-content">
                     <img src="Assests/Sourdough Loaf.jpg" alt="Artisan Sourdough Bread" class="product-image">
                     <h3>Artisan Sourdough</h3>
@@ -200,6 +231,7 @@
                     <button class="cta-button secondary" style="margin-top: 1rem; padding: 0.5rem 1rem;" onclick="addToCart('Artisan Sourdough', 45.00)">Add to Cart</button>
                 </div>
                 
+                <!-- Product Card 2: Croissants -->
                 <div class="product-card centered-content">
                     <img src="Assests/Butter Croissant.jpg" alt="Butter Croissants" class="product-image">
                     <h3>Butter Croissants</h3>
@@ -208,6 +240,7 @@
                     <button class="cta-button secondary" style="margin-top: 1rem; padding: 0.5rem 1rem;" onclick="addToCart('Butter Croissants', 25.00)">Add to Cart</button>
                 </div>
                 
+                <!-- Product Card 3: Carrot Cake -->
                 <div class="product-card centered-content">
                     <img src="Assests/Carrot Cake.jpg" alt="Carrot Cake" class="product-image">
                     <h3>Carrot Cake</h3>
@@ -222,6 +255,7 @@
         <section class="testimonials section-container centered-text">
             <h2 class="section-title">What Our Customers Say</h2>
             <div class="testimonials-grid centered-grid">
+                <!-- Testimonial 1 -->
                 <div class="testimonial-card centered-content">
                     <div class="testimonial-content">
                         <div class="rating">
@@ -238,6 +272,7 @@
                     </div>
                 </div>
                 
+                <!-- Testimonial 2 -->
                 <div class="testimonial-card centered-content">
                     <div class="testimonial-content">
                         <div class="rating">
@@ -254,6 +289,7 @@
                     </div>
                 </div>
                 
+                <!-- Testimonial 3 -->
                 <div class="testimonial-card centered-content">
                     <div class="testimonial-content">
                         <div class="rating">
@@ -272,7 +308,7 @@
             </div>
         </section>
 
-        <!-- Newsletter Section -->
+        <!-- Newsletter Subscription Section -->
         <section class="newsletter-section centered-text">
             <div class="section-container centered-content">
                 <div class="newsletter-content centered-content">
@@ -290,14 +326,17 @@
         </section>
     </main>
 
+    <!-- Footer Section -->
     <footer class="main-footer centered-text">
         <div class="footer-container">
             <div class="footer-content centered-grid">
+                <!-- Company Information -->
                 <div class="footer-section centered-content">
                     <h3>Sweet Delights Bakery</h3>
                     <p>Family-owned artisan bakery in Polokwane creating delicious bread, pastries, and custom cakes with love and tradition.</p>
                 </div>
                 
+                <!-- Quick Links -->
                 <div class="footer-section centered-content">
                     <h3>Quick Links</h3>
                     <ul class="centered-content">
@@ -309,6 +348,7 @@
                     </ul>
                 </div>
                 
+                <!-- Contact Information -->
                 <div class="footer-section centered-content">
                     <h3>Contact Info</h3>
                     <p><i class="fas fa-map-marker-alt"></i> 123 Pretorius Street, Polokwane, 0700</p>
@@ -316,6 +356,7 @@
                     <p><i class="fas fa-envelope"></i> orders@sweetdelights.co.za</p>
                 </div>
                 
+                <!-- Social Media Links -->
                 <div class="footer-section centered-content">
                     <h3>Follow Us</h3>
                     <div class="social-links centered-text">
@@ -332,13 +373,14 @@
                 </div>
             </div>
             
+            <!-- Copyright Information -->
             <div class="footer-bottom centered-content">
                 <p>&copy; 2025 Sweet Delights Bakery. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Shopping Cart Notification -->
+    <!-- Shopping Cart Notification (Hidden by default) -->
     <div id="cartNotification" class="cart-notification" style="display: none;">
         <div class="cart-message">
             <i class="fas fa-check-circle"></i>
@@ -346,12 +388,15 @@
         </div>
     </div>
 
+    <!-- External JavaScript Files -->
     <script src="js/navigation.js"></script>
     <script src="js/live-content.js"></script>
+    
+    <!-- Inline JavaScript for enhanced functionality -->
     <script>
         // Enhanced functionality for homepage
         document.addEventListener('DOMContentLoaded', function() {
-            // Business status indicator
+            // Business status indicator function
             function updateBusinessStatus() {
                 const now = new Date();
                 const day = now.getDay();
@@ -361,6 +406,7 @@
                 let isOpen = false;
                 let statusText = '';
                 
+                // Determine business hours based on day of week
                 if (day === 0) { // Sunday
                     statusText = 'Closed Today';
                 } else if (day === 6) { // Saturday
@@ -371,10 +417,12 @@
                     statusText = isOpen ? 'Open Now' : 'Closed Now';
                 }
                 
+                // Update status element
                 statusElement.textContent = statusText;
                 statusElement.className = `business-status ${isOpen ? '' : 'closed'}`;
             }
             
+            // Initialize and update business status every minute
             updateBusinessStatus();
             setInterval(updateBusinessStatus, 60000);
             
@@ -393,7 +441,7 @@
                 }, 16);
             }
             
-            // Initialize statistics
+            // Initialize statistics with animation
             setTimeout(() => {
                 animateCounter(document.getElementById('happyCustomers'), 1250);
                 animateCounter(document.getElementById('yearsExperience'), 15);
@@ -401,24 +449,25 @@
                 animateCounter(document.getElementById('productsAvailable'), 45);
             }, 1000);
             
-            // Enhanced newsletter form
+            // Enhanced newsletter form handling
             const newsletterForm = document.getElementById('newsletterForm');
             if (newsletterForm) {
                 newsletterForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     const email = document.getElementById('newsletterEmail').value;
                     
-                    // Simulate subscription
+                    // Simulate subscription process
                     const button = this.querySelector('button');
                     const originalText = button.innerHTML;
                     button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
                     button.disabled = true;
                     
+                    // Simulate API call delay
                     setTimeout(() => {
                         button.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
                         button.style.background = '#28a745';
                         
-                        // Reset after 2 seconds
+                        // Reset form after success
                         setTimeout(() => {
                             button.innerHTML = originalText;
                             button.disabled = false;
@@ -463,6 +512,7 @@
                 currentSpecial = (currentSpecial + 1) % specials.length;
                 specialDisplay.style.opacity = '0';
                 
+                // Fade in new special after fade out
                 setTimeout(() => {
                     specialDisplay.textContent = specials[currentSpecial];
                     specialDisplay.style.opacity = '1';
@@ -476,7 +526,7 @@
             notification.style.display = 'block';
             notification.style.animation = 'slideIn 0.5s ease';
             
-            // Update notification message
+            // Update notification message with product name
             notification.querySelector('span').textContent = `${productName} added to cart!`;
             
             // Hide notification after 3 seconds
@@ -491,7 +541,7 @@
             console.log(`Added to cart: ${productName} - R${price}`);
         }
         
-        // Add CSS for cart notification
+        // Add CSS for cart notification dynamically
         const style = document.createElement('style');
         style.textContent = `
             .cart-notification {
@@ -513,16 +563,19 @@
                 gap: 10px;
             }
             
+            /* Slide in animation for cart notification */
             @keyframes slideIn {
                 from { transform: translateX(100%); opacity: 0; }
                 to { transform: translateX(0); opacity: 1; }
             }
             
+            /* Slide out animation for cart notification */
             @keyframes slideOut {
                 from { transform: translateX(0); opacity: 1; }
                 to { transform: translateX(100%); opacity: 0; }
             }
             
+            /* Star rating styling */
             .rating {
                 color: #ffc107;
                 margin-bottom: 0.5rem;

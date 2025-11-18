@@ -19,8 +19,17 @@ The project uses a clear, hierarchical structure to manage assets and pages:
 ├── page/  
 │   ├── about.html           # Our story and staff (includes staff cards).  
 │   ├── contact.html         # Contact form and opening hours.
-│   ├── deliveries.html      # NEW: Delivery information and ordering guide.  
+├── ├── deliveries.html      # NEW: Delivery information and ordering guide.  
 │   └── menu.html            # Menu cards for breads, pastries, and cakes.
+│
+├── js/
+│   ├──accordion.js
+│   ├──form-validation.js
+│   ├──lightbox.js
+│   ├──live-content.js
+│   ├──modal.js
+│   ├──navigation.js
+│   └──search.js   
 │
 ├── css/
 │   └── style.css            # Main stylesheet for all 5 pages.   

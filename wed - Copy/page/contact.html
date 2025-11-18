@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Document Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Sweet Delights Bakery - Get in Touch</title>
+    
+    <!-- SEO Meta Tags -->
     <meta name="keywords" content="contact bakery, Sweet Delights Bakery, Polokwane bakery contact, custom cake orders, bakery inquiries, artisan bakery contact">
     <meta name="description" content="Contact Sweet Delights Bakery in Polokwane. Visit our bakery, call 015 291 1234, or send us a message for orders and inquiries.">
+    
+    <!-- CSS Links -->
+    <!-- External stylesheets for fonts, icons, and main styles -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    
+    <!-- Inline CSS for contact page specific styles -->
     <style>
+        /* Force text centering for all elements with this class */
         .centered-text * {
             text-align: center !important;
         }
         
-        /* Enhanced interactive styles */
+        /* Enhanced interactive styles for clickable map */
         .clickable-map:hover {
             transform: scale(1.02);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
         
+        /* Map instruction styling */
         .map-instruction {
             margin-top: 10px;
             font-size: 0.9rem;
@@ -27,6 +37,7 @@
             font-weight: 500;
         }
         
+        /* Map container styling */
         .clickable-map {
             display: block; 
             margin: 20px auto; 
@@ -34,37 +45,42 @@
             border-radius: 10px;
         }
         
+        /* Call-to-action button spacing */
         .cta-button.primary {
             margin-top: 15px;
         }
         
-        /* Enhanced form styles */
+        /* Enhanced form focus states */
         .form-input:focus, .form-textarea:focus, .form-select:focus {
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(155, 60, 60, 0.1);
             transform: translateY(-2px);
         }
         
+        /* Hover effects for info cards */
         .info-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         
+        /* Quick links hover effects */
         .quick-links a:hover {
             color: var(--primary-dark);
             transform: translateX(5px);
         }
         
+        /* Phone link hover effect */
         .phone-link:hover {
             transform: scale(1.05);
         }
         
-        /* Loading animation */
+        /* Loading animation for submit button */
         .submit-button.loading {
             position: relative;
             color: transparent;
         }
         
+        /* Loading spinner animation */
         .submit-button.loading::after {
             content: '';
             position: absolute;
@@ -79,12 +95,13 @@
             animation: spin 0.8s linear infinite;
         }
         
+        /* Spinner animation keyframes */
         @keyframes spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
         
-        /* Character counter */
+        /* Character counter styling for message textarea */
         .char-counter {
             text-align: right;
             font-size: 0.8rem;
@@ -92,15 +109,17 @@
             margin-top: 5px;
         }
         
+        /* Warning state for character counter */
         .char-counter.warning {
             color: #ff9800;
         }
         
+        /* Error state for character counter */
         .char-counter.error {
             color: #dc3545;
         }
         
-        /* Enhanced success message */
+        /* Enhanced success message styling */
         .form-success-message {
             animation: slideDown 0.5s ease;
             background: #d4edda;
@@ -114,10 +133,12 @@
             gap: 10px;
         }
         
+        /* Success message icon styling */
         .form-success-message i {
             font-size: 1.2rem;
         }
         
+        /* Slide down animation for success message */
         @keyframes slideDown {
             from {
                 opacity: 0;
@@ -129,17 +150,18 @@
             }
         }
         
-        /* Enhanced contact items */
+        /* Enhanced contact items with hover effects */
         .info-item:hover i {
             transform: scale(1.2);
             color: var(--primary-dark);
         }
         
+        /* Icon transitions for contact items */
         .info-item i {
             transition: all 0.3s ease;
         }
         
-        /* Business hours status */
+        /* Business hours status indicator */
         .hours-status {
             display: inline-block;
             padding: 4px 8px;
@@ -149,11 +171,13 @@
             margin-left: 10px;
         }
         
+        /* Open status styling */
         .hours-status.open {
             background: #d4edda;
             color: #155724;
         }
         
+        /* Closed status styling */
         .hours-status.closed {
             background: #f8d7da;
             color: #721c24;
@@ -161,19 +185,24 @@
     </style>
 </head>
 <body class="centered-text">
+    <!-- Main Header Section -->
     <header class="main-header">
         <div class="header-container">
+            <!-- Logo linking to homepage -->
             <a href="../index.html" class="logo-link">
                 <img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo" class="logo-image">
             </a>
             
+            <!-- Primary Navigation -->
             <nav class="primary-navigation">
+                <!-- Mobile Menu Toggle Button -->
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
                     <span class="menu-bar"></span>
                     <span class="menu-bar"></span>
                     <span class="menu-bar"></span>
                 </button>
                 
+                <!-- Navigation Links -->
                 <ul class="navigation-links">
                     <li><a href="../index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">Our Story</a></li>
@@ -185,41 +214,49 @@
         </div>
     </header>
 
+    <!-- Main Content Area -->
     <main class="main-content centered-text">
-        <!-- Hero Section -->
+        <!-- Hero Section with contact page messaging -->
         <section class="hero-section">
             <div class="hero-content centered-content">
                 <h1 class="main-heading">Contact Us</h1>
                 <p class="hero-description">We'd love to hear from you! Visit us in-store or send us a message.</p>
+                <!-- Dynamic business status indicator -->
                 <div class="current-status centered-content" style="margin-top: 1rem;">
                     <span id="businessStatus" class="hours-status"></span>
                 </div>
             </div>
         </section>
 
+        <!-- Contact Details Section -->
         <section class="contact-details section-container centered-text">
             <div class="contact-grid">
-                <!-- Contact Form -->
+                <!-- Contact Form Section -->
                 <div class="contact-form-container">
                     <h2>Send Us a Message</h2>
                     <p>Have questions about our products, custom orders, or catering? We're here to help!</p>
                     
+                    <!-- Contact Form with Netlify integration -->
                     <form name="contact" method="POST" data-netlify="true" class="contact-form" id="contactForm">
+                        <!-- Name Input Field -->
                         <div class="form-group">
                             <label for="name" class="form-label">Your Name *</label>
                             <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
                         </div>
                         
+                        <!-- Email Input Field -->
                         <div class="form-group">
                             <label for="email" class="form-label">Your Email *</label>
                             <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
                         </div>
                         
+                        <!-- Phone Input Field -->
                         <div class="form-group">
                             <label for="phone" class="form-label">Phone Number</label>
                             <input type="tel" id="phone" name="phone" class="form-input" placeholder="015 291 1234">
                         </div>
                         
+                        <!-- Subject Selection Dropdown -->
                         <div class="form-group">
                             <label for="subject" class="form-label">Subject</label>
                             <select id="subject" name="subject" class="form-select">
@@ -234,12 +271,14 @@
                             </select>
                         </div>
                         
+                        <!-- Message Textarea with Character Counter -->
                         <div class="form-group">
                             <label for="message" class="form-label">Message *</label>
                             <textarea id="message" name="message" rows="5" class="form-textarea" placeholder="Tell us how we can help you..." required maxlength="1000"></textarea>
                             <div class="char-counter" id="charCounter">0/1000 characters</div>
                         </div>
                         
+                        <!-- Newsletter Subscription Option -->
                         <div class="form-group" style="text-align: left;">
                             <label class="form-label">
                                 <input type="checkbox" id="newsletter" name="newsletter" checked>
@@ -247,14 +286,16 @@
                             </label>
                         </div>
                         
+                        <!-- Submit Button -->
                         <button type="submit" class="submit-button" id="submitButton">
                             <i class="fas fa-paper-plane"></i> Send Message
                         </button>
                     </form>
                 </div>
 
-                <!-- Contact Information -->
+                <!-- Contact Information Section -->
                 <div class="contact-info">
+                    <!-- Contact Details Card -->
                     <div class="info-card">
                         <h3>Visit Our Bakery</h3>
                         <div class="info-item">
@@ -274,7 +315,16 @@
                                 <small style="color: var(--text-light);">Mon-Fri 7AM-5PM, Sat 8AM-3PM</small>
                             </div>
                         </div>
-                        
+                        <!-- Add WhatsApp integration -->
+                        <div class="info-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <p>+27 15 291 1234</p>
+                                <a href="https://wa.me/27152911234" class="cta-button secondary" target="_blank" style="margin-top: 5px;">
+                                    <i class="fab fa-whatsapp"></i> Message Us
+                                </a>
+                            </div>
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
                             <div>
@@ -285,6 +335,7 @@
                         </div>
                     </div>
 
+                    <!-- Business Hours Card -->
                     <div class="info-card">
                         <h3>Opening Hours <span id="hoursStatus" class="hours-status"></span></h3>
                         <div class="hours-item">
@@ -305,6 +356,7 @@
                         </div>
                     </div>
 
+                    <!-- Quick Links Card -->
                     <div class="info-card">
                         <h3>Quick Links</h3>
                         <ul class="quick-links">
@@ -317,11 +369,12 @@
                 </div>
             </div>
 
-            <!-- Map Section -->
+            <!-- Map Section with Directions -->
             <div class="map-section centered-content">
                 <h2>Find Us</h2>
                 <p class="map-instruction">Click on the map to get directions</p>
                 <div class="map-container centered-content">
+                    <!-- Clickable Map Image with Google Maps Link -->
                     <a href="https://maps.app.goo.gl/f11GVkvb6tM9BX616" target="_blank" class="map-link">
                         <img src="../Assests/unnamed.jpg" 
                              alt="Map showing the location of Sweet Delights Bakery in Polokwane" 
@@ -329,6 +382,7 @@
                     </a>
                     <div class="map-overlay centered-content">
                         <p><strong>Easy to Find:</strong> Located on Pretorius Street in central Polokwane. Ample parking available.</p>
+                        <!-- Directions Button -->
                         <a href="https://maps.app.goo.gl/f11GVkvb6tM9BX616" target="_blank" class="cta-button primary">
                             <i class="fas fa-map-marker-alt"></i> Get Directions
                         </a>
@@ -337,13 +391,14 @@
             </div>
         </section>
 
-        <!-- Emergency Order Section -->
+        <!-- Emergency Order Section for Urgent Requests -->
         <section class="emergency-order centered-text">
             <div class="section-container centered-content">
                 <h2>Need a Last-Minute Order?</h2>
                 <p>Call us directly for urgent custom orders or same-day pickup</p>
                 <div class="emergency-contact centered-content">
                     <i class="fas fa-phone-alt"></i>
+                    <!-- Click-to-call Phone Link -->
                     <a href="tel:0152911234" class="phone-link">015 291 1234</a>
                 </div>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
@@ -353,13 +408,17 @@
         </section>
     </main>
 
+    <!-- Footer Section -->
     <footer class="main-footer centered-text">
         <div class="footer-container">
             <div class="footer-content centered-grid">
+                <!-- Company Information -->
                 <div class="footer-section centered-content">
                     <h3>Sweet Delights Bakery</h3>
                     <p>Family-owned artisan bakery in Polokwane creating delicious bread, pastries, and custom cakes.</p>
                 </div>
+                
+                <!-- Social Media Links -->
                 
                 <div class="footer-section centered-content">
                     <h3>Follow Us</h3>
@@ -377,14 +436,17 @@
                 </div>
             </div>
             
+            <!-- Copyright Information -->
             <div class="footer-bottom centered-content">
                 <p>&copy; 2025 Sweet Delights Bakery. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Inline JavaScript for contact page functionality -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Get DOM elements
         const contactForm = document.querySelector('.contact-form');
         const messageTextarea = document.getElementById('message');
         const charCounter = document.getElementById('charCounter');
@@ -392,11 +454,12 @@
         const businessStatus = document.getElementById('businessStatus');
         const hoursStatus = document.getElementById('hoursStatus');
         
-        // Character counter for message
+        // Character counter for message textarea
         messageTextarea.addEventListener('input', function() {
             const length = this.value.length;
             charCounter.textContent = `${length}/1000 characters`;
             
+            // Update counter color based on character count
             if (length > 800) {
                 charCounter.classList.add('warning');
                 charCounter.classList.remove('error');
@@ -408,7 +471,7 @@
             }
         });
         
-        // Business hours status
+        // Business hours status function
         function updateBusinessStatus() {
             const now = new Date();
             const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
@@ -418,6 +481,7 @@
             let isOpen = false;
             let statusText = '';
             
+            // Determine business hours based on day of week
             if (day === 0) { // Sunday
                 statusText = 'Closed Today';
             } else if (day === 6) { // Saturday
@@ -428,6 +492,7 @@
                 statusText = isOpen ? 'Open Now' : 'Closed Now';
             }
             
+            // Update status elements
             const statusClass = isOpen ? 'open' : 'closed';
             businessStatus.textContent = statusText;
             businessStatus.className = `hours-status ${statusClass}`;
@@ -435,8 +500,8 @@
             hoursStatus.className = `hours-status ${statusClass}`;
         }
         
+        // Initialize and update business status every minute
         updateBusinessStatus();
-        // Update status every minute
         setInterval(updateBusinessStatus, 60000);
         
         // Enhanced form validation and submission
@@ -447,7 +512,7 @@
                 // Clear previous errors
                 clearErrors();
                 
-                // Validate fields
+                // Validate form fields
                 const name = document.getElementById('name');
                 const email = document.getElementById('email');
                 const message = document.getElementById('message');
@@ -491,12 +556,13 @@
                     isValid = false;
                 }
                 
+                // If all validations pass
                 if (isValid) {
                     // Show loading state
                     submitButton.classList.add('loading');
                     submitButton.disabled = true;
                     
-                    // Simulate form submission
+                    // Simulate form submission (in real scenario, this would submit to Netlify)
                     setTimeout(() => {
                         // Show success message
                         showSuccess('Your message has been sent successfully! We will respond within 24 hours.');
@@ -517,7 +583,7 @@
             });
         }
         
-        // Real-time validation
+        // Real-time validation on field blur
         const formInputs = document.querySelectorAll('.form-input, .form-textarea, .form-select');
         formInputs.forEach(input => {
             input.addEventListener('blur', function() {
@@ -525,9 +591,11 @@
             });
         });
         
+        // Field-specific validation function
         function validateField(field) {
             const value = field.value.trim();
             
+            // Validate based on field type
             switch(field.id) {
                 case 'name':
                     if (value && value.length < 2) {
@@ -547,6 +615,7 @@
             }
         }
         
+        // Show error message for form field
         function showError(field, message) {
             field.classList.add('field-error');
             const errorDiv = document.createElement('div');
@@ -554,10 +623,11 @@
             errorDiv.textContent = message;
             field.parentNode.appendChild(errorDiv);
             
-            // Scroll to error
+            // Scroll to error field for better UX
             field.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
         
+        // Clear all form errors
         function clearErrors() {
             const errors = document.querySelectorAll('.validation-error');
             errors.forEach(error => error.remove());
@@ -566,11 +636,13 @@
             errorFields.forEach(field => field.classList.remove('field-error'));
         }
         
+        // Email validation function
         function isValidEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
         }
         
+        // Show success message after form submission
         function showSuccess(message) {
             const successDiv = document.createElement('div');
             successDiv.className = 'form-success-message';
@@ -582,6 +654,7 @@
             const form = document.querySelector('.contact-form');
             form.insertBefore(successDiv, form.firstChild);
             
+            // Remove success message after 5 seconds
             setTimeout(() => {
                 successDiv.remove();
             }, 5000);
@@ -609,6 +682,7 @@
     });
     </script>
 
+    <!-- External JavaScript for navigation -->
     <script src="../js/navigation.js"></script>
 </body>
 </html>

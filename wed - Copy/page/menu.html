@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Document Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Menu | Sweet Delights Bakery - Artisan Breads & Pastries</title>
+    
+    <!-- SEO Meta Tags -->
     <meta name="keywords" content="bakery, Polokwane, artisan bread, pastries, cakes, custom cakes, fresh bread, gluten-free options, Sweet Delights Bakery">
     <meta name="description" content="Explore Sweet Delights Bakery's menu featuring artisan breads, fresh pastries, custom cakes, and gluten-free options in Polokwane.">
+    
+    <!-- CSS Links -->
+    <!-- External stylesheets for fonts, icons, and main styles -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    
+    <!-- Inline CSS for menu page specific styles -->
     <style>
+        /* Force text centering for all elements with this class */
         .centered-text * {
             text-align: center !important;
         }
         
-        /* Enhanced interactive styles */
+        /* Enhanced interactive styles for product images */
         .product-image {
             cursor: pointer;
             transition: transform 0.3s ease;
         }
         
+        /* Hover effect for product images */
         .product-image:hover {
             transform: scale(1.05);
         }
         
+        /* Hover effect for product cards */
         .product-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
+        /* Hover effect for dietary option cards */
         .diet-option:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         
-        /* Filter and search styles */
+        /* Filter buttons container styling */
         .menu-filters {
             display: flex;
             justify-content: center;
@@ -43,6 +55,7 @@
             flex-wrap: wrap;
         }
         
+        /* Filter button styling */
         .filter-btn {
             padding: 0.75rem 1.5rem;
             border: 2px solid var(--primary-color);
@@ -54,18 +67,21 @@
             font-weight: 500;
         }
         
+        /* Active and hover states for filter buttons */
         .filter-btn.active,
         .filter-btn:hover {
             background: var(--primary-color);
             color: white;
         }
         
+        /* Search container styling */
         .search-container {
             max-width: 400px;
             margin: 2rem auto;
             position: relative;
         }
         
+        /* Search input styling */
         .search-input {
             width: 100%;
             padding: 1rem 3rem 1rem 1.5rem;
@@ -75,12 +91,14 @@
             transition: all 0.3s ease;
         }
         
+        /* Search input focus state */
         .search-input:focus {
             outline: none;
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(155, 60, 60, 0.1);
         }
         
+        /* Search icon positioning */
         .search-icon {
             position: absolute;
             right: 1.5rem;
@@ -89,7 +107,7 @@
             color: var(--text-light);
         }
         
-        /* Enhanced lightbox */
+        /* Enhanced lightbox navigation buttons */
         .lightbox-nav {
             position: absolute;
             top: 50%;
@@ -109,20 +127,23 @@
             justify-content: center;
         }
         
+        /* Lightbox navigation hover effects */
         .lightbox-nav:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-50%) scale(1.1);
         }
         
+        /* Previous button positioning */
         .lightbox-prev {
             left: 2rem;
         }
         
+        /* Next button positioning */
         .lightbox-next {
             right: 2rem;
         }
         
-        /* Add to cart styles */
+        /* Add to cart button styling */
         .add-to-cart {
             background: var(--primary-color);
             color: white;
@@ -139,22 +160,24 @@
             justify-content: center;
         }
         
+        /* Add to cart hover effects */
         .add-to-cart:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
         }
         
-        /* Price animation */
+        /* Price animation on hover */
         .price {
             transition: all 0.3s ease;
         }
         
+        /* Price scaling effect on card hover */
         .product-card:hover .price {
             transform: scale(1.1);
             color: var(--primary-dark);
         }
         
-        /* Cart notification */
+        /* Cart notification styling */
         .cart-notification {
             position: fixed;
             top: 100px;
@@ -169,30 +192,33 @@
             animation: slideIn 0.5s ease;
         }
         
+        /* Cart message layout */
         .cart-message {
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
+        /* Slide in animation for notifications */
         @keyframes slideIn {
             from { transform: translateX(100%); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
         }
         
+        /* Slide out animation for notifications */
         @keyframes slideOut {
             from { transform: translateX(0); opacity: 1; }
             to { transform: translateX(100%); opacity: 0; }
         }
         
-        /* Nutrition info */
+        /* Nutrition information styling */
         .nutrition-info {
             font-size: 0.8rem;
             color: var(--text-light);
             margin-top: 0.5rem;
         }
         
-        /* Seasonal badge */
+        /* Seasonal badge styling */
         .seasonal-badge {
             position: absolute;
             top: 10px;
@@ -205,25 +231,31 @@
             font-weight: 600;
         }
         
+        /* Product card positioning context for badges */
         .product-card {
             position: relative;
         }
     </style>
 </head>
 <body class="centered-text">
+    <!-- Main Header Section -->
     <header class="main-header">
         <div class="header-container">
+            <!-- Logo linking to homepage -->
             <a href="../index.html" class="logo-link">
                 <img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo" class="logo-image">
             </a>
             
+            <!-- Primary Navigation -->
             <nav class="primary-navigation">
+                <!-- Mobile Menu Toggle Button -->
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
                     <span class="menu-bar"></span>
                     <span class="menu-bar"></span>
                     <span class="menu-bar"></span>
                 </button>
                 
+                <!-- Navigation Links -->
                 <ul class="navigation-links">
                     <li><a href="../index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">Our Story</a></li>
@@ -235,8 +267,9 @@
         </div>
     </header>
 
+    <!-- Main Content Area -->
     <main class="main-content centered-text">
-        <!-- Hero Section -->
+        <!-- Hero Section with menu page messaging -->
         <section class="hero-section">
             <div class="hero-content centered-content">
                 <h1 class="main-heading">Our Menu</h1>
@@ -244,7 +277,9 @@
             </div>
         </section>
 
+        <!-- Menu List Section -->
         <section class="menu-list section-container centered-text">
+            <!-- Menu Introduction -->
             <div class="menu-intro centered-content">
                 <p class="lead">All items are baked fresh in-house daily using the finest ingredients. Ask about our seasonal specials and gluten-free options!</p>
             </div>
@@ -264,12 +299,13 @@
                 <i class="fas fa-search search-icon"></i>
             </div>
 
-            <!-- Artisan Breads -->
+            <!-- Artisan Breads Category -->
             <div class="menu-category centered-content" data-category="bread">
                 <h2 class="category-title">Artisan Breads</h2>
                 
-                
+                <!-- Bread Products Grid -->
                 <div class="products-grid centered-grid">
+                    <!-- Sourdough Loaf Product Card -->
                     <div class="product-card centered-content">
                         <div class="seasonal-badge">Seasonal</div>
                         <img src="../Assests/Sourdough Loaf.jpg" alt="Fresh Sourdough Loaf with crispy crust" class="product-image">
@@ -282,6 +318,7 @@
                         </button>
                     </div>
                     
+                    <!-- Multi-seed Rye Product Card -->
                     <div class="product-card centered-content">
                         <img src="../Assests/Multi-seed Rye.jpg" alt="Multi-seed Rye Bread" class="product-image">
                         <h3>Multi-seed Rye</h3>
@@ -293,6 +330,7 @@
                         </button>
                     </div>
                     
+                    <!-- Classic Baguette Product Card -->
                     <div class="product-card centered-content">
                         <img src="../Assests/Classic French Baguette.jpg" alt="Classic Baguette" class="product-image">
                         <h3>Classic Baguette</h3>
@@ -306,11 +344,13 @@
                 </div>
             </div>
 
-            <!-- Pastries -->
+            <!-- Pastries Category -->
             <div class="menu-category centered-content" data-category="pastry">
                 <h2 class="category-title">Pastries & Viennoiserie</h2>
                 
+                <!-- Pastries Products Grid -->
                 <div class="products-grid centered-grid">
+                    <!-- Butter Croissant Product Card -->
                     <div class="product-card centered-content">
                         <img src="../Assests/Butter Croissant.jpg" alt="Butter Croissant with flaky layers" class="product-image">
                         <h3>Butter Croissant</h3>
@@ -322,6 +362,7 @@
                         </button>
                     </div>
                     
+                    <!-- Chocolate Éclair Product Card -->
                     <div class="product-card centered-content">
                         <div class="seasonal-badge">Popular</div>
                         <img src="../Assests/Chocolate Éclair.jpg" alt="Chocolate Éclair with rich filling" class="product-image">
@@ -334,6 +375,7 @@
                         </button>
                     </div>
                     
+                    <!-- Almond Croissant Product Card -->
                     <div class="product-card centered-content">
                         <img src="../Assests/Almond Croissant.jpg" alt="Almond Croissant with sliced almonds" class="product-image">
                         <h3>Almond Croissant</h3>
@@ -347,12 +389,13 @@
                 </div>
             </div>
 
-            <!-- Cakes -->
+            <!-- Cakes Category -->
             <div class="menu-category centered-content" data-category="cake">
                 <h2 class="category-title">Cakes & Desserts</h2>
                 
-                
+                <!-- Cakes Products Grid -->
                 <div class="products-grid centered-grid">
+                    <!-- Carrot Cake Product Card -->
                     <div class="product-card centered-content">
                         <img src="../Assests/Carrot Cake.jpg" alt="Carrot Cake with cream cheese frosting" class="product-image">
                         <h3>Carrot Cake</h3>
@@ -364,6 +407,7 @@
                         </button>
                     </div>
                     
+                    <!-- Chocolate Cake Product Card -->
                     <div class="product-card centered-content">
                         <div class="seasonal-badge">Best Seller</div>
                         <img src="../Assests/Decadent Chocolate Cake.jpg" alt="Decadent Chocolate Cake" class="product-image">
@@ -376,6 +420,7 @@
                         </button>
                     </div>
                     
+                    <!-- Red Velvet Cake Product Card -->
                     <div class="product-card centered-content">
                         <img src="../Assests/Red Velvet Cake.jpg" alt="Red Velvet Cake slice" class="product-image">
                         <h3>Red Velvet</h3>
@@ -389,22 +434,25 @@
                 </div>
             </div>
 
-            <!-- Special Diets -->
+            <!-- Special Dietary Options Section -->
             <div class="special-diet-section centered-content" data-category="diet">
                 <h2 class="category-title">Special Dietary Options</h2>
                 <div class="diet-options centered-grid">
+                    <!-- Gluten-Free Option -->
                     <div class="diet-option centered-content">
                         <i class="fas fa-seedling"></i>
                         <h4>Gluten-Free</h4>
                         <p>Daily selection of gluten-free bread and pastries</p>
                         <small style="color: var(--text-light); margin-top: 0.5rem;">Available upon request</small>
                     </div>
+                    <!-- Vegan Option -->
                     <div class="diet-option centered-content">
                         <i class="fas fa-leaf"></i>
                         <h4>Vegan</h4>
                         <p>Plant-based options available upon request</p>
                         <small style="color: var(--text-light); margin-top: 0.5rem;">48 hours notice required</small>
                     </div>
+                    <!-- Whole Grain Option -->
                     <div class="diet-option centered-content">
                         <i class="fas fa-wheat-alt"></i>
                         <h4>Whole Grain</h4>
@@ -415,7 +463,7 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
+        <!-- Call-to-Action Section -->
         <section class="cta-section centered-text">
             <div class="section-container centered-content">
                 <h2>Ready to Taste the Difference?</h2>
@@ -428,14 +476,17 @@
         </section>
     </main>
 
+    <!-- Footer Section -->
     <footer class="main-footer centered-text">
         <div class="footer-container">
             <div class="footer-content centered-grid">
+                <!-- Company Information -->
                 <div class="footer-section centered-content">
                     <h3>Sweet Delights Bakery</h3>
                     <p>Family-owned artisan bakery in Polokwane creating delicious bread, pastries, and custom cakes.</p>
                 </div>
                 
+                <!-- Opening Hours -->
                 <div class="footer-section centered-content">
                     <h3>Opening Hours</h3>
                     <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
@@ -443,48 +494,58 @@
                     <p>Sunday: Closed</p>
                 </div>
                 
+                <!-- Contact Information -->
                 <div class="footer-section centered-content">
                     <h3>Contact Info</h3>
                     <p><i class="fas fa-phone"></i> 015 291 1234</p>
                     <p><i class="fas fa-envelope"></i> orders@sweetdelights.co.za</p>
                 </div>
             </div>
+            
+            <!-- Social Media Links -->
             <div class="footer-section centered-content">
-                    <h3>Follow Us</h3>
-                    <div class="social-links centered-text">
-                        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="social-link">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
+                <h3>Follow Us</h3>
+                <div class="social-links centered-text">
+                    <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
                 </div>
+            </div>
+            
+            <!-- Copyright Information -->
             <div class="footer-bottom centered-content">
                 <p>&copy; 2025 Sweet Delights Bakery. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Lightbox HTML -->
+    <!-- Lightbox HTML for image viewing -->
     <div class="lightbox-overlay" id="lightbox">
         <div class="lightbox-container">
+            <!-- Close button for lightbox -->
             <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <!-- Previous image button -->
             <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
                 <i class="fas fa-chevron-left"></i>
             </button>
+            <!-- Next image button -->
             <button class="lightbox-nav lightbox-next" id="lightboxNext">
                 <i class="fas fa-chevron-right"></i>
             </button>
+            <!-- Lightbox image display -->
             <img src="" alt="" class="lightbox-image" id="lightboxImage">
+            <!-- Image caption -->
             <div class="lightbox-caption" id="lightboxCaption"></div>
         </div>
     </div>
 
-    <!-- Cart Notification -->
+    <!-- Cart Notification Element -->
     <div id="cartNotification" class="cart-notification">
         <div class="cart-message">
             <i class="fas fa-check-circle"></i>
@@ -492,10 +553,14 @@
         </div>
     </div>
 
+    <!-- External JavaScript for navigation -->
     <script src="../js/navigation.js"></script>
+    
+    <!-- Inline JavaScript for menu page functionality -->
     <script>
     // Enhanced menu functionality
     document.addEventListener('DOMContentLoaded', function() {
+        // Lightbox elements
         const lightbox = document.getElementById('lightbox');
         const lightboxImage = document.getElementById('lightboxImage');
         const lightboxCaption = document.getElementById('lightboxCaption');
@@ -507,7 +572,7 @@
         const productImages = Array.from(document.querySelectorAll('.product-image'));
         let currentImageIndex = 0;
         
-        // Add click event to all product images
+        // Add click event to all product images for lightbox
         productImages.forEach((img, index) => {
             img.addEventListener('click', function() {
                 currentImageIndex = index;
@@ -518,30 +583,32 @@
             });
         });
         
-        // Lightbox navigation
+        // Lightbox previous button functionality
         lightboxPrev.addEventListener('click', function() {
             currentImageIndex = (currentImageIndex - 1 + productImages.length) % productImages.length;
             updateLightboxImage();
         });
         
+        // Lightbox next button functionality
         lightboxNext.addEventListener('click', function() {
             currentImageIndex = (currentImageIndex + 1) % productImages.length;
             updateLightboxImage();
         });
         
+        // Update lightbox image and caption
         function updateLightboxImage() {
             const img = productImages[currentImageIndex];
             lightboxImage.src = img.src;
             lightboxCaption.textContent = img.alt;
         }
         
-        // Close lightbox
+        // Close lightbox functionality
         lightboxClose.addEventListener('click', function() {
             lightbox.classList.remove('active');
             document.body.style.overflow = 'auto';
         });
         
-        // Close on overlay click
+        // Close lightbox when clicking on overlay
         lightbox.addEventListener('click', function(e) {
             if (e.target === lightbox) {
                 lightbox.classList.remove('active');
@@ -569,13 +636,13 @@
         
         filterButtons.forEach(button => {
             button.addEventListener('click', function() {
-                // Update active button
+                // Update active button state
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 this.classList.add('active');
                 
                 const filter = this.getAttribute('data-filter');
                 
-                // Show/hide categories based on filter
+                // Show/hide categories based on selected filter
                 menuCategories.forEach(category => {
                     if (filter === 'all' || category.getAttribute('data-category') === filter) {
                         category.style.display = 'block';
@@ -604,6 +671,7 @@
                 const productName = card.querySelector('h3').textContent.toLowerCase();
                 const productDescription = card.querySelector('p').textContent.toLowerCase();
                 
+                // Show/hide products based on search term
                 if (productName.includes(searchTerm) || productDescription.includes(searchTerm)) {
                     card.style.display = 'block';
                     card.style.opacity = '1';
@@ -635,14 +703,14 @@
             button.style.transition = 'all 0.3s ease';
         });
         
-        // Initialize animations
+        // Initialize animations with staggered timing
         setTimeout(() => {
             productCards.forEach((card, index) => {
                 card.style.animation = `fadeInUp 0.6s ease ${index * 0.1}s both`;
             });
         }, 500);
         
-        // Add CSS for animations
+        // Add CSS for animations dynamically
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fadeInUp {
@@ -665,14 +733,15 @@
         notification.style.display = 'block';
         notification.style.animation = 'slideIn 0.5s ease';
         
-        // Update notification message
+        // Update notification message with product name
         notification.querySelector('span').textContent = `${productName} added to cart!`;
         
-        // Add animation to the clicked button
+        // Add visual feedback to the clicked button
         const button = event.target;
         button.style.background = '#28a745';
         button.innerHTML = '<i class="fas fa-check"></i> Added!';
         
+        // Reset button after 2 seconds
         setTimeout(() => {
             button.style.background = '';
             button.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';

@@ -178,3 +178,56 @@ document.addEventListener('DOMContentLoaded', () => {
         new FormValidator('registerForm');
     }
 });
+// Add CSRF protection and spam prevention
+function addSecurityFeatures() {
+    // Add honeypot field
+    const honeypot = document.createElement('input');
+    honeypot.type = 'text';
+    honeypot.name = 'website';
+    honeypot.style.display = 'none';
+    honeypot.className = 'hp-field';
+    contactForm.appendChild(honeypot);
+    
+    // Add timestamp for form submission rate limiting
+    const timestamp = document.createElement('input');
+    timestamp.type = 'hidden';
+    timestamp.name = 'timestamp';
+    timestamp.value = Date.now();
+    contactForm.appendChild(timestamp);
+}
+// Add more robust error handling
+function handleFormError(error) {
+    console.error('Form submission error:', error);
+    
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'form-error-message';
+    errorDiv.innerHTML = `
+        <i class="fas fa-exclamation-triangle"></i>
+        <div>Sorry, there was an error sending your message. Please try again or call us directly.</div>
+    `;
+    
+    const form = document.querySelector('.contact-form');
+    form.insertBefore(errorDiv, form.firstChild);
+    
+    setTimeout(() => {
+        errorDiv.remove();
+    }, 5000);
+}
+// Add more robust error handling
+function handleFormError(error) {
+    console.error('Form submission error:', error);
+    
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'form-error-message';
+    errorDiv.innerHTML = `
+        <i class="fas fa-exclamation-triangle"></i>
+        <div>Sorry, there was an error sending your message. Please try again or call us directly.</div>
+    `;
+    
+    const form = document.querySelector('.contact-form');
+    form.insertBefore(errorDiv, form.firstChild);
+    
+    setTimeout(() => {
+        errorDiv.remove();
+    }, 5000);
+}
