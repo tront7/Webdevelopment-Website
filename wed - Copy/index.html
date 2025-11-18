@@ -362,7 +362,18 @@
                 </div>
             </div>
 
-            
+            <!-- Real-time Content Widget -->
+            <div class="real-time centered-content">
+                <div class="real-time-widget">
+                    <h3>Fresh Out of the Oven</h3>
+                    <!-- Dynamic content area for fresh items -->
+                    <div id="freshItems">
+                        <p>Loading today's fresh batches...</p>
+                    </div>
+                    <!-- Last update timestamp -->
+                    <p class="update-time" id="updateTime"></p>
+                </div>
+            </div>
 
             <!-- Copyright Information -->
             <div class="footer-bottom centered-content">
@@ -532,6 +543,43 @@
             console.log(`Added to cart: ${productName} - R${price}`);
         }
         
+    // Fresh items widget
+    function updateFreshItems() {
+        const freshItems = document.getElementById('freshItems');
+        const updateTime = document.getElementById('updateTime');
+        if (!freshItems || !updateTime) return;
+
+        const allItems = [
+            'Sourdough Loaf',
+            'Multi-seed Rye',
+            'Classic Baguette',
+            'Butter Croissant',
+            'Chocolate Éclair',
+            'Almond Croissant',
+            'Carrot Cake',
+            'Decadent Chocolate',
+            'Red Velvet'
+        ];
+
+        // pick 3 random items
+        const randomItems = allItems
+            .map(v => ({ v, r: Math.random() }))
+            .sort((a, b) => a.r - b.r)
+            .slice(0, 3)
+            .map(x => x.v);
+
+        // Update the fresh items display
+        freshItems.innerHTML = randomItems.map(item => 
+            `<div class="fresh-item">🍞 ${item}</div>`
+        ).join('');
+
+        // Update the timestamp
+        updateTime.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+    }
+
+    // Initialize and update every 30 seconds
+    updateFreshItems();
+    setInterval(updateFreshItems, 30000);
         // Add CSS for cart notification dynamically
         const style = document.createElement('style');
         style.textContent = `
@@ -573,6 +621,7 @@
             }
         `;
         document.head.appendChild(style);
+       
     </script>
 </body>
 </html>

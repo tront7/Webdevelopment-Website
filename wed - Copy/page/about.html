@@ -213,19 +213,7 @@
                 </div>
             </div>
             
-            <!-- Real-time Content Widget -->
-            <div class="real-time centered-content">
-                <div class="real-time-widget">
-                    <h3>Fresh Out of the Oven</h3>
-                    <!-- Dynamic content area for fresh items -->
-                    <div id="freshItems">
-                        <p>Loading today's fresh batches...</p>
-                    </div>
-                    <!-- Last update timestamp -->
-                    <p class="update-time" id="updateTime"></p>
-                </div>
-            </div>
-            
+           
             <!-- Copyright Information -->
             <div class="footer-bottom centered-content">
                 <p>&copy; 2025 Sweet Delights Bakery. All rights reserved.</p>
@@ -237,35 +225,5 @@
     <script src="../js/navigation.js"></script>
     <script src="../js/accordion.js"></script>
     
-    <!-- Inline JavaScript for real-time content updates -->
-    <script>
-    // Real-time content updates for fresh bakery items
-    function updateFreshItems() {
-        // Array of possible fresh bakery items
-        const items = [
-            'Sourdough Bread - Ready now!',
-            'Butter Croissants - Fresh batch',
-            'Chocolate Chip Cookies - Just baked',
-            'Multigrain Loaf - Coming soon'
-        ];
-        
-        // Randomly select 2 items to display
-        const randomItems = items.sort(() => 0.5 - Math.random()).slice(0, 2);
-        const freshItems = document.getElementById('freshItems');
-        const updateTime = document.getElementById('updateTime');
-        
-        // Update the fresh items display
-        freshItems.innerHTML = randomItems.map(item => 
-            `<div class="fresh-item">🍞 ${item}</div>`
-        ).join('');
-        
-        // Update the timestamp
-        updateTime.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
-    }
-
-    // Initialize and update every 30 seconds
-    updateFreshItems();
-    setInterval(updateFreshItems, 30000);
-    </script>
 </body>
 </html>
