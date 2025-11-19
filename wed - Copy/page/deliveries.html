@@ -14,35 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
 
-  <style>
-    /* Page-specific styles (consolidated & minimal) */
-    .centered-text { text-align: center; }
-
-    .delivery-feature, .process-step, .area-item { transition: transform .3s ease, box-shadow .3s ease; }
-    .delivery-feature:hover, .process-step:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,.15); }
-    .area-item:hover { transform: translateX(5px); background:#f8f9fa; cursor:pointer; }
-
-    .delivery-logo { transition: all .3s ease; border-radius:10px; cursor:pointer; }
-    .delivery-logo:hover { transform:scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,.2); filter:brightness(1.1); }
-
-    .search-input:focus { outline:none; border-color:var(--primary-color); box-shadow:0 0 0 3px rgba(155,60,60,.1); }
-    .search-suggestions { position:absolute; left:0; right:0; background:#fff; border:1px solid #e0e0e0; border-top:none; border-radius:0 0 8px 8px; max-height:150px; overflow-y:auto; z-index:10; display:none; }
-    .suggestion-item { padding:.5rem 1rem; border-bottom:1px solid #f0f0f0; cursor:pointer; }
-    .suggestion-item:last-child{ border-bottom:none; }
-    .search-highlight{ background:#fff3cd; padding:2px 4px; border-radius:3px; font-weight:600; }
-    .no-results{ color:var(--text-light); font-style:italic; padding:2rem; text-align:center; }
-    #resultsCount{ margin-bottom:1rem; font-weight:500; color:var(--text-light); }
-
-    /* Simple layout helpers used on this page */
-    .header-container, .footer-container, .section-container { max-width:1100px; margin:0 auto; padding:1rem; }
-
-    /* small responsive tweak for nav button */
-    .mobile-menu-toggle { background:none; border:none; cursor:pointer; }
-    .mobile-menu-toggle .menu-bar{ display:block; width:22px; height:2px; background:#333; margin:4px 0; }
-
-    /* suggestion active state (keyboard navigation) */
-    .suggestion-item.active{ background:#f0f0f0; }
-  </style>
+  
 </head>
 <body>
   <header class="main-header">
@@ -182,7 +154,6 @@
   </footer>
 
   <!-- Page scripts - single DOMContentLoaded wrapper (keeps JS consolidated) -->
-  <script src="../js/navigation.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
-

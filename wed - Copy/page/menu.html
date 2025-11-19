@@ -11,231 +11,9 @@
     <meta name="description" content="Explore Sweet Delights Bakery's menu featuring artisan breads, fresh pastries, custom cakes, and gluten-free options in Polokwane.">
     
     <!-- CSS Links -->
-    <!-- External stylesheets for fonts, icons, and main styles -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
-    
-    <!-- Inline CSS for menu page specific styles -->
-    <style>
-        /* Force text centering for all elements with this class */
-        .centered-text * {
-            text-align: center !important;
-        }
-        
-        /* Enhanced interactive styles for product images */
-        .product-image {
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        /* Hover effect for product images */
-        .product-image:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Hover effect for product cards */
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Hover effect for dietary option cards */
-        .diet-option:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Filter buttons container styling */
-        .menu-filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        
-        /* Filter button styling */
-        .filter-btn {
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--primary-color);
-            background: transparent;
-            color: var(--primary-color);
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-        
-        /* Active and hover states for filter buttons */
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        /* Search container styling */
-        .search-container {
-            max-width: 400px;
-            margin: 2rem auto;
-            position: relative;
-        }
-        
-        /* Search input styling */
-        .search-input {
-            width: 100%;
-            padding: 1rem 3rem 1rem 1.5rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 25px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        /* Search input focus state */
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(155, 60, 60, 0.1);
-        }
-        
-        /* Search icon positioning */
-        .search-icon {
-            position: absolute;
-            right: 1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-light);
-        }
-        
-        /* Enhanced lightbox navigation buttons */
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            font-size: 2rem;
-            padding: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Lightbox navigation hover effects */
-        .lightbox-nav:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-50%) scale(1.1);
-        }
-        
-        /* Previous button positioning */
-        .lightbox-prev {
-            left: 2rem;
-        }
-        
-        /* Next button positioning */
-        .lightbox-next {
-            right: 2rem;
-        }
-        
-        /* Add to cart button styling */
-        .add-to-cart {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            margin-top: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-        
-        /* Add to cart hover effects */
-        .add-to-cart:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        
-        /* Price animation on hover */
-        .price {
-            transition: all 0.3s ease;
-        }
-        
-        /* Price scaling effect on card hover */
-        .product-card:hover .price {
-            transform: scale(1.1);
-            color: var(--primary-dark);
-        }
-        
-        /* Cart notification styling */
-        .cart-notification {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            z-index: 1000;
-            display: none;
-            animation: slideIn 0.5s ease;
-        }
-        
-        /* Cart message layout */
-        .cart-message {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        /* Slide in animation for notifications */
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        /* Slide out animation for notifications */
-        @keyframes slideOut {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-        }
-        
-        /* Nutrition information styling */
-        .nutrition-info {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-top: 0.5rem;
-        }
-        
-        /* Seasonal badge styling */
-        .seasonal-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ff6b6b;
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        /* Product card positioning context for badges */
-        .product-card {
-            position: relative;
-        }
-    </style>
 </head>
 <body class="centered-text">
     <!-- Main Header Section -->
@@ -299,21 +77,22 @@
                 <i class="fas fa-search search-icon"></i>
             </div>
 
-            <!-- Artisan Breads Category -->
+            <!-- Artisan Breads Category - 3 items side by side -->
             <div class="menu-category centered-content" data-category="bread">
                 <h2 class="category-title">Artisan Breads</h2>
+                <p class="category-description">Freshly baked daily using traditional methods and the finest ingredients</p>
                 
-                <!-- Bread Products Grid -->
-                <div class="products-grid centered-grid">
+                <!-- Bread Products Grid - 3 columns -->
+                <div class="products-grid">
                     <!-- Sourdough Loaf Product Card -->
                     <div class="product-card centered-content">
                         <div class="seasonal-badge">Seasonal</div>
                         <img src="../Assests/Sourdough Loaf.jpg" alt="Fresh Sourdough Loaf with crispy crust" class="product-image">
                         <h3>Sourdough Loaf</h3>
-                        <p>24-hour fermented with wild yeast, crispy crust and soft interior</p>
+                        <p>24-hour fermented with wild yeast, crispy crust and soft interior. Perfect for sandwiches or toasting.</p>
                         <div class="nutrition-info">🍞 250g | ~800 calories</div>
                         <span class="price">R45.00</span>
-                        <button class="add-to-cart" onclick="addToCart('Sourdough Loaf', 45.00)">
+                        <button class="add-to-cart" data-product="Sourdough Loaf" data-price="45.00">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
                     </div>
@@ -322,10 +101,10 @@
                     <div class="product-card centered-content">
                         <img src="../Assests/Multi-seed Rye.jpg" alt="Multi-seed Rye Bread" class="product-image">
                         <h3>Multi-seed Rye</h3>
-                        <p>Hearty rye flour with sunflower, pumpkin, and flax seeds</p>
+                        <p>Hearty rye flour with sunflower, pumpkin, and flax seeds. Rich in fiber and perfect for healthy breakfasts.</p>
                         <div class="nutrition-info">🍞 300g | ~750 calories</div>
                         <span class="price">R50.00</span>
-                        <button class="add-to-cart" onclick="addToCart('Multi-seed Rye', 50.00)">
+                        <button class="add-to-cart" data-product="Multi-seed Rye" data-price="50.00">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
                     </div>
@@ -334,30 +113,31 @@
                     <div class="product-card centered-content">
                         <img src="../Assests/Classic French Baguette.jpg" alt="Classic Baguette" class="product-image">
                         <h3>Classic Baguette</h3>
-                        <p>Traditional French baguette with crisp golden crust</p>
+                        <p>Traditional French baguette with crisp golden crust and soft, airy interior. Ideal for parties and gatherings.</p>
                         <div class="nutrition-info">🥖 200g | ~600 calories</div>
                         <span class="price">R35.00</span>
-                        <button class="add-to-cart" onclick="addToCart('Classic Baguette', 35.00)">
+                        <button class="add-to-cart" data-product="Classic Baguette" data-price="35.00">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Pastries Category -->
+            <!-- Pastries Category - 3 items side by side -->
             <div class="menu-category centered-content" data-category="pastry">
                 <h2 class="category-title">Pastries & Viennoiserie</h2>
+                <p class="category-description">Flaky, buttery delights made with premium French butter and traditional techniques</p>
                 
-                <!-- Pastries Products Grid -->
-                <div class="products-grid centered-grid">
+                <!-- Pastries Products Grid - 3 columns -->
+                <div class="products-grid">
                     <!-- Butter Croissant Product Card -->
                     <div class="product-card centered-content">
                         <img src="../Assests/Butter Croissant.jpg" alt="Butter Croissant with flaky layers" class="product-image">
                         <h3>Butter Croissant</h3>
-                        <p>Classic French croissant with 27 delicate layers</p>
+                        <p>Classic French croissant with 27 delicate layers of butter and dough. Perfect with coffee or as a breakfast treat.</p>
                         <div class="nutrition-info">🥐 60g | ~270 calories</div>
                         <span class="price">R25.00</span>
-                        <button class="add-to-cart" onclick="addToCart('Butter Croissant', 25.00)">
+                        <button class="add-to-cart" data-product="Butter Croissant" data-price="25.00">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
                     </div>
@@ -367,10 +147,10 @@
                         <div class="seasonal-badge">Popular</div>
                         <img src="../Assests/Chocolate Éclair.jpg" alt="Chocolate Éclair with rich filling" class="product-image">
                         <h3>Chocolate Éclair</h3>
-                        <p>Choux pastry filled with vanilla cream and chocolate glaze</p>
+                        <p>Choux pastry filled with vanilla cream and topped with rich chocolate glaze. A classic French pastry favorite.</p>
                         <div class="nutrition-info">🧁 80g | ~320 calories</div>
                         <span class="price">R35.00</span>
-                        <button class="add-to-cart" onclick="addToCart('Chocolate Éclair', 35.00, this)">
+                        <button class="add-to-cart" data-product="Chocolate Éclair" data-price="35.00">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
                     </div>
@@ -379,30 +159,31 @@
                     <div class="product-card centered-content">
                         <img src="../Assests/Almond Croissant.jpg" alt="Almond Croissant with sliced almonds" class="product-image">
                         <h3>Almond Croissant</h3>
-                        <p>Buttery croissant filled with almond cream and topped with sliced almonds</p>
+                        <p>Buttery croissant filled with almond cream and topped with sliced almonds. Crispy, nutty, and utterly delicious.</p>
                         <div class="nutrition-info">🥐 70g | ~350 calories</div>
                         <span class="price">R32.00</span>
-                        <button class="add-to-cart" onclick="addToCart('Almond Croissant', 32.00, this)">
+                        <button class="add-to-cart" data-product="Almond Croissant" data-price="32.00">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cakes Category -->
+            <!-- Cakes Category - 3 items side by side -->
             <div class="menu-category centered-content" data-category="cake">
                 <h2 class="category-title">Cakes & Desserts</h2>
+                <p class="category-description">Decadent cakes and desserts perfect for celebrations or everyday indulgence</p>
                 
-                <!-- Cakes Products Grid -->
-                <div class="products-grid centered-grid">
+                <!-- Cakes Products Grid - 3 columns -->
+                <div class="products-grid">
                     <!-- Carrot Cake Product Card -->
                     <div class="product-card centered-content">
                         <img src="../Assests/Carrot Cake.jpg" alt="Carrot Cake with cream cheese frosting" class="product-image">
                         <h3>Carrot Cake</h3>
-                        <p>Moist spiced cake with walnuts and cream cheese frosting</p>
+                        <p>Moist spiced cake with walnuts and cream cheese frosting. Packed with fresh carrots and warm spices.</p>
                         <div class="nutrition-info">🍰 Slice: ~450 calories</div>
                         <span class="price">R40.00 / R350.00</span>
-                        <button class="add-to-cart" onclick="addToCart('Carrot Cake Slice', 40.00, this)">
+                        <button class="add-to-cart" data-product="Carrot Cake Slice" data-price="40.00">
                             <i class="fas fa-shopping-cart"></i> Add Slice
                         </button>
                     </div>
@@ -412,10 +193,10 @@
                         <div class="seasonal-badge">Best Seller</div>
                         <img src="../Assests/Decadent Chocolate Cake.jpg" alt="Decadent Chocolate Cake" class="product-image">
                         <h3>Decadent Chocolate</h3>
-                        <p>Rich dark chocolate cake with ganache and chocolate shavings</p>
+                        <p>Rich dark chocolate cake with ganache and chocolate shavings. Intensely chocolatey and perfectly moist.</p>
                         <div class="nutrition-info">🍰 Slice: ~520 calories</div>
                         <span class="price">R45.00 / R400.00</span>
-                        <button class="add-to-cart" onclick="addToCart('Chocolate Cake Slice', 45.00, this)">
+                        <button class="add-to-cart" data-product="Chocolate Cake Slice" data-price="45.00">
                             <i class="fas fa-shopping-cart"></i> Add Slice
                         </button>
                     </div>
@@ -424,40 +205,44 @@
                     <div class="product-card centered-content">
                         <img src="../Assests/Red Velvet Cake.jpg" alt="Red Velvet Cake slice" class="product-image">
                         <h3>Red Velvet</h3>
-                        <p>Classic red velvet with cream cheese frosting and red crumbs</p>
+                        <p>Classic red velvet with cream cheese frosting and red crumbs. Velvety texture with a hint of cocoa.</p>
                         <div class="nutrition-info">🍰 Slice: ~480 calories</div>
                         <span class="price">R42.00 / R380.00</span>
-                        <button class="add-to-cart" onclick="addToCart('Red Velvet Cake Slice', 42.00, this)">
+                        <button class="add-to-cart" data-product="Red Velvet Cake Slice" data-price="42.00">
                             <i class="fas fa-shopping-cart"></i> Add Slice
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Special Dietary Options Section -->
+            <!-- Special Dietary Options Section - 3 items side by side -->
             <div class="special-diet-section centered-content" data-category="diet">
                 <h2 class="category-title">Special Dietary Options</h2>
-                <div class="diet-options centered-grid">
+                <p class="category-description">Delicious alternatives for various dietary needs and preferences</p>
+                
+                <div class="diet-options">
                     <!-- Gluten-Free Option -->
                     <div class="diet-option centered-content">
                         <i class="fas fa-seedling"></i>
                         <h4>Gluten-Free</h4>
-                        <p>Daily selection of gluten-free bread and pastries</p>
-                        <small style="color: var(--text-light); margin-top: 0.5rem;">Available upon request</small>
+                        <p>Daily selection of gluten-free bread, pastries, and cakes made with premium alternative flours</p>
+                        <small style="color: var(--text-light); margin-top: 0.5rem;">Available upon request with 24 hours notice</small>
                     </div>
+                    
                     <!-- Vegan Option -->
                     <div class="diet-option centered-content">
                         <i class="fas fa-leaf"></i>
                         <h4>Vegan</h4>
-                        <p>Plant-based options available upon request</p>
-                        <small style="color: var(--text-light); margin-top: 0.5rem;">48 hours notice required</small>
+                        <p>Plant-based options using dairy-free alternatives and egg substitutes without compromising on taste</p>
+                        <small style="color: var(--text-light); margin-top: 0.5rem;">48 hours notice required for custom orders</small>
                     </div>
+                    
                     <!-- Whole Grain Option -->
                     <div class="diet-option centered-content">
                         <i class="fas fa-wheat-alt"></i>
                         <h4>Whole Grain</h4>
-                        <p>Nutritious whole grain bread varieties</p>
-                        <small style="color: var(--text-light); margin-top: 0.5rem;">Baked fresh daily</small>
+                        <p>Nutritious whole grain bread varieties packed with fiber and natural goodness for health-conscious customers</p>
+                        <small style="color: var(--text-light); margin-top: 0.5rem;">Baked fresh daily - available in-store</small>
                     </div>
                 </div>
             </div>
@@ -517,20 +302,7 @@
                     </a>
                 </div>
             </div>
-             </div>
-            
-            <!-- Real-time Content Widget -->
-            <div class="real-time centered-content">
-                <div class="real-time-widget">
-                    <h3>Fresh Out of the Oven</h3>
-                    <!-- Dynamic content area for fresh items -->
-                    <div id="freshItems">
-                        <p>Loading today's fresh batches...</p>
-                    </div>
-                    <!-- Last update timestamp -->
-                    <p class="update-time" id="updateTime"></p>
-                </div>
-            </div>
+
             <!-- Copyright Information -->
             <div class="footer-bottom centered-content">
                 <p>&copy; 2025 Sweet Delights Bakery. All rights reserved.</p>
@@ -566,261 +338,7 @@
         </div>
     </div>
 
-    <!-- External JavaScript for navigation -->
-    <script src="../js/navigation.js"></script>
-    
-    <!-- Inline JavaScript for menu page functionality -->
-    <script>
-    // Enhanced menu functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        // Lightbox elements
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightboxImage');
-        const lightboxCaption = document.getElementById('lightboxCaption');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const lightboxPrev = document.getElementById('lightboxPrev');
-        const lightboxNext = document.getElementById('lightboxNext');
-        
-        // Product images array for lightbox navigation
-        const productImages = Array.from(document.querySelectorAll('.product-image'));
-        let currentImageIndex = 0;
-        
-        // Add click event to all product images for lightbox
-        productImages.forEach((img, index) => {
-            img.addEventListener('click', function() {
-                currentImageIndex = index;
-                lightboxImage.src = this.src;
-                lightboxCaption.textContent = this.alt;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        
-        // Lightbox previous button functionality
-        lightboxPrev.addEventListener('click', function() {
-            currentImageIndex = (currentImageIndex - 1 + productImages.length) % productImages.length;
-            updateLightboxImage();
-        });
-        
-        // Lightbox next button functionality
-        lightboxNext.addEventListener('click', function() {
-            currentImageIndex = (currentImageIndex + 1) % productImages.length;
-            updateLightboxImage();
-        });
-        
-        // Update lightbox image and caption
-        function updateLightboxImage() {
-            const img = productImages[currentImageIndex];
-            lightboxImage.src = img.src;
-            lightboxCaption.textContent = img.alt;
-        }
-        
-        // Close lightbox functionality
-        lightboxClose.addEventListener('click', function() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Close lightbox when clicking on overlay
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Keyboard navigation for lightbox
-        document.addEventListener('keydown', function(e) {
-            if (lightbox.classList.contains('active')) {
-                if (e.key === 'Escape') {
-                    lightbox.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                } else if (e.key === 'ArrowLeft') {
-                    lightboxPrev.click();
-                } else if (e.key === 'ArrowRight') {
-                    lightboxNext.click();
-                }
-            }
-        });
-        
-        // Menu filtering functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const menuCategories = document.querySelectorAll('.menu-category, .special-diet-section');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Update active button state
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                
-                const filter = this.getAttribute('data-filter');
-                
-                // Show/hide categories based on selected filter
-                menuCategories.forEach(category => {
-                    if (filter === 'all' || category.getAttribute('data-category') === filter) {
-                        category.style.display = 'block';
-                        setTimeout(() => {
-                            category.style.opacity = '1';
-                            category.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else {
-                        category.style.opacity = '0';
-                        category.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            category.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-        
-        // Search functionality
-        const searchInput = document.getElementById('menuSearch');
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            const productCards = document.querySelectorAll('.product-card');
-            
-            productCards.forEach(card => {
-                const productName = card.querySelector('h3').textContent.toLowerCase();
-                const productDescription = card.querySelector('p').textContent.toLowerCase();
-                
-                // Show/hide products based on search term
-                if (productName.includes(searchTerm) || productDescription.includes(searchTerm)) {
-                    card.style.display = 'block';
-                    card.style.opacity = '1';
-                    card.style.transform = 'scale(1)';
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.8)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
-        
-        // Add transitions for hover effects
-        const productCards = document.querySelectorAll('.product-card');
-        const dietOptions = document.querySelectorAll('.diet-option');
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
-        
-        productCards.forEach(card => {
-            card.style.transition = 'all 0.3s ease';
-        });
-        
-        dietOptions.forEach(option => {
-            option.style.transition = 'all 0.3s ease';
-        });
-        
-        addToCartButtons.forEach(button => {
-            button.style.transition = 'all 0.3s ease';
-        });
-        
-        // Initialize animations with staggered timing
-        setTimeout(() => {
-            productCards.forEach((card, index) => {
-                card.style.animation = `fadeInUp 0.6s ease ${index * 0.1}s both`;
-            });
-        }, 500);
-        
-        // Add CSS for animations dynamically
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    });
-    
-    // Add to cart functionality
-    function addToCart(productName, price, button) {
-        const notification = document.getElementById('cartNotification');
-        if (notification) {
-            notification.style.display = 'block';
-            notification.style.animation = 'slideIn 0.5s ease';
-            // Update notification message with product name
-            const span = notification.querySelector('span');
-            if (span) span.textContent = `${productName} added to cart!`;
-        }
-
-        // Determine the button element (passed or fallback)
-        const btn = button || document.activeElement;
-        if (btn) {
-            // store original HTML for restoration
-            if (!btn.dataset.original) {
-                btn.dataset.original = btn.innerHTML;
-            }
-
-            // Add visual feedback to the clicked button
-            btn.style.background = '#28a745';
-            btn.innerHTML = '<i class="fas fa-check"></i> Added!';
-
-            // Reset button after 2 seconds
-            setTimeout(() => {
-                btn.style.background = '';
-                btn.innerHTML = btn.dataset.original || '<i class="fas fa-shopping-cart"></i> Add to Cart';
-            }, 2000);
-        }
-
-        // Hide notification after 3 seconds
-        if (notification) {
-            setTimeout(() => {
-                notification.style.animation = 'slideOut 0.5s ease';
-                setTimeout(() => {
-                    notification.style.display = 'none';
-                }, 500);
-            }, 3000);
-        }
-
-        // In a real application, you would add the item to a cart object/store
-        console.log(`Added to cart: ${productName} - R${Number(price).toFixed(2)}`);
-    }
-
-    // Fresh items widget
-    function updateFreshItems() {
-        const freshItems = document.getElementById('freshItems');
-        const updateTime = document.getElementById('updateTime');
-        if (!freshItems || !updateTime) return;
-
-        const allItems = [
-            'Sourdough Loaf',
-            'Multi-seed Rye',
-            'Classic Baguette',
-            'Butter Croissant',
-            'Chocolate Éclair',
-            'Almond Croissant',
-            'Carrot Cake',
-            'Decadent Chocolate',
-            'Red Velvet'
-        ];
-
-        // pick 3 random items
-        const randomItems = allItems
-            .map(v => ({ v, r: Math.random() }))
-            .sort((a, b) => a.r - b.r)
-            .slice(0, 3)
-            .map(x => x.v);
-
-        // Update the fresh items display
-        freshItems.innerHTML = randomItems.map(item => 
-            `<div class="fresh-item">🍞 ${item}</div>`
-        ).join('');
-
-        // Update the timestamp
-        updateTime.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
-    }
-
-    // Initialize and update every 30 seconds
-    updateFreshItems();
-    setInterval(updateFreshItems, 30000);
-    </script>
+    <!-- External JavaScript -->
+    <script src="../js/script.js"></script>
 </body>
 </html>

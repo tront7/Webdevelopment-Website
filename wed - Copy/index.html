@@ -17,119 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <!-- Inline CSS for critical styles and interactive elements -->
-    <style>
-        /* Force text centering for all elements with this class */
-        .centered-text * {
-            text-align: center !important;
-        }
-        
-        /* Enhanced interactive styles for product cards */
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Hover effects for testimonial cards */
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Animation for special offer banner */
-        .special-offer-banner {
-            animation: pulse 2s infinite;
-        }
-        
-        /* Pulse animation for attention-grabbing elements */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Smooth transition for hero image */
-        .hero-image {
-            transition: transform 0.5s ease;
-        }
-        
-        /* Hover effect for hero image */
-        .hero-image:hover {
-            transform: scale(1.02);
-        }
-        
-        /* Hover effect for social media links */
-        .social-link:hover {
-            transform: translateY(-3px) scale(1.1);
-        }
-        
-        /* Business status indicator styling */
-        .business-status {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-left: 10px;
-            background: #d4edda;
-            color: #155724;
-            animation: fadeIn 1s ease;
-        }
-        
-        /* Closed status styling */
-        .business-status.closed {
-            background: #f8d7da;
-            color: #721c24;
-        }
-        
-        /* Fade in animation for status indicator */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        /* Enhanced focus state for newsletter form */
-        .newsletter-form input:focus {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(155, 60, 60, 0.2);
-        }
-        
-        /* Grid layout for statistics section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        /* Individual stat item styling */
-        .stat-item {
-            background: var(--white);
-            padding: 2rem 1rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-        
-        /* Hover effect for stat items */
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        /* Large number styling for statistics */
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            display: block;
-        }
-        
-        /* Label styling for statistics */
-        .stat-label {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-    </style>
+    
 </head>
 <body class="centered-text">
     <!-- Main Header Section -->
@@ -362,18 +250,6 @@
                 </div>
             </div>
 
-            <!-- Real-time Content Widget -->
-            <div class="real-time centered-content">
-                <div class="real-time-widget">
-                    <h3>Fresh Out of the Oven</h3>
-                    <!-- Dynamic content area for fresh items -->
-                    <div id="freshItems">
-                        <p>Loading today's fresh batches...</p>
-                    </div>
-                    <!-- Last update timestamp -->
-                    <p class="update-time" id="updateTime"></p>
-                </div>
-            </div>
 
             <!-- Copyright Information -->
             <div class="footer-bottom centered-content">
@@ -391,8 +267,7 @@
     </div>
 
     <!-- External JavaScript Files -->
-    <script src="js/navigation.js"></script>
-    <script src="js/live-content.js"></script>
+    <script src="js/script.js"></script>
     
     <!-- Inline JavaScript for enhanced functionality -->
     <script>

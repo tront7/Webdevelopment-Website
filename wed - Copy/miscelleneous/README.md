@@ -30,13 +30,13 @@ SweetDelights/
 │ ├── deliveries.html # Delivery information and ordering
 │ └── menu.html # Product categories with lightbox
 ├── js/ # Modular JavaScript components
-│ ├── accordion.js # FAQ accordion functionality
-│ ├── form-validation.js # Contact form validation
-│ ├── lightbox.js # Image lightbox for products
-│ ├── live-content.js # Dynamic content updates
-│ ├── modal.js # Modal dialog system
-│ ├── navigation.js # Mobile navigation manager
-│ └── search.js # Search functionality
+│ └── script.js #FAQ accordion functionality
+│               # Contact form validation
+│               # Image lightbox for products
+│               # Dynamic content updates
+│               # Modal dialog system
+│               # Mobile navigation manager
+│               # Search functionality
 ├── css/
 │ └── style.css # Main stylesheet with CSS variables
 ├── assets/ # All media assets

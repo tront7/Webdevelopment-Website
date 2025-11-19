@@ -15,7 +15,108 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
-           
+    
+    <!-- Inline CSS for about page specific styles -->
+    <style>
+        /* Force text centering for all elements with this class */
+        .centered-text * {
+            text-align: center !important;
+        }
+        
+        /* Story grid layout */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        
+        /* Values grid styling */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        /* Value item styling */
+        .value-item {
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Staff grid for single row of 3 */
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        /* Staff member styling */
+        .staff-member {
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .staff-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .staff-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+        
+        .role {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsive design for staff grid */
+        @media (max-width: 768px) {
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Content block styling */
+        .content-block {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Responsive text */
+        .responsive-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body class="centered-text">
     <!-- Main Header Section -->
@@ -98,11 +199,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Story Image Column -->
-                    <div class="story-image centered-content">
-                        <img src="../Assests/familia.webp" alt="The family owners of Sweet Delights Bakery smiling in the bakery" class="staff-img">
-                    </div>
                 </div>
             </div>
         </section>
@@ -110,8 +206,8 @@
         <!-- Team Section -->
         <section class="featured-products section-container centered-text">
             <h2 class="section-title">Meet Our Artisan Bakers</h2>
-            <!-- Staff Members Container -->
-            <div class="staff-container centered-grid">
+            <!-- Staff Members Grid - Single Row of 3 -->
+            <div class="staff-grid centered-grid">
                 <!-- Head Baker -->
                 <div class="staff-member centered-content">
                     <img src="../Assests/employee 1.jpg" alt="Jane Doe, Head Baker at Sweet Delights" class="staff-img">
@@ -119,6 +215,7 @@
                     <p class="role">Head Baker & Founder</p>
                     <p>With over 20 years of experience, Jane brings traditional European techniques to every creation.</p>
                 </div>
+                
                 <!-- Pastry Chef -->
                 <div class="staff-member centered-content">
                     <img src="../Assests/employee 2.jpg" alt="Emily White, Pastry Chef" class="staff-img">
@@ -126,9 +223,10 @@
                     <p class="role">Pastry Chef</p>
                     <p>French-trained pastry artist specializing in delicate pastries and custom cake designs.</p>
                 </div>
+                
                 <!-- Cake Decorator -->
                 <div class="staff-member centered-content">
-                     <img src="../Assests/employee 3.jpg" alt="John Smith, Master Cake Decorator" class="staff-img">
+                    <img src="../Assests/employee 3.jpg" alt="John Smith, Master Cake Decorator" class="staff-img">
                     <h3>John Smith</h3>
                     <p class="role">Cake Decorator</p>
                     <p>Transforming visions into edible art with intricate designs and flawless execution.</p>
@@ -213,7 +311,6 @@
                 </div>
             </div>
             
-           
             <!-- Copyright Information -->
             <div class="footer-bottom centered-content">
                 <p>&copy; 2025 Sweet Delights Bakery. All rights reserved.</p>
@@ -222,8 +319,7 @@
     </footer>
 
     <!-- External JavaScript Files -->
-    <script src="../js/navigation.js"></script>
-    <script src="../js/accordion.js"></script>
+    <script src="../js/script.js"></script>
     
 </body>
 </html>
