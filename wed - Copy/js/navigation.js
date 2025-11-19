@@ -1,4 +1,3 @@
-// Mobile navigation functionality
 class NavigationManager {
     constructor() {
         this.menuToggle = document.querySelector('.mobile-menu-toggle');

@@ -1,634 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Document Metadata -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delivery Information | Sweet Delights Bakery - Fresh Bakery Delivery</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="bakery, Polokwane, artisan bread, pastries, cakes, custom cakes, fresh bread, delivery bakery, Sweet Delights Bakery">
-    <meta name="description" content="Sweet Delights Bakery delivery service in Polokwane. Fresh bread, pastries, and cakes delivered to your door with QuickDeliver SA.">
-    
-    <!-- CSS Links -->
-    <!-- External stylesheets for fonts, icons, and main styles -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
-    
-    <!-- Inline CSS for delivery page specific styles -->
-    <style>
-        /* Force text centering for all elements with this class */
-        .centered-text * {
-            text-align: center !important;
-        }
-        
-        /* Essential interactive styles that must stay inline */
-        /* Hover effect for delivery feature cards */
-        .delivery-feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Hover effect for process steps */
-        .process-step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Hover effect for area list items */
-        .area-item:hover {
-            background: #f8f9fa;
-            transform: translateX(5px);
-        }
-        
-        /* Search input focus state */
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(155, 60, 60, 0.1);
-        }
-        
-        /* Delivery feature icon styling */
-        .delivery-feature i {
-            font-size: 2rem; 
-            color: var(--primary-color); 
-            margin-bottom: 1rem;
-        }
-        
-        /* Results count text styling */
-        #resultsCount {
-            margin-bottom: 1rem; 
-            font-weight: 500; 
-            color: var(--text-light);
-        }
-        
-        /* Call-to-action section spacing */
-        .cta-section {
-            margin: 3rem 0;
-        }
-        
-        /* Quick Delivery Logo Hover Effects */
-        .delivery-logo {
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        
-        /* Logo hover animation */
-        .delivery-logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            filter: brightness(1.1);
-        }
-        
-        /* Partner header hover effect */
-        .partner-header:hover .delivery-logo {
-            transform: rotate(-2deg) scale(1.05);
-        }
-        
-        /* Enhanced Search Styles */
-        /* Highlight for search matches */
-        .search-highlight {
-            background-color: #fff3cd;
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-weight: 600;
-        }
-        
-        /* No results message styling */
-        .no-results {
-            color: var(--text-light);
-            font-style: italic;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        /* Area item transitions and cursor */
-        .area-item {
-            transition: all 0.2s ease;
-            cursor: pointer;
-            position: relative;
-        }
-        
-        /* Location emoji for area items */
-        .area-item::before {
-            content: "📍";
-            margin-right: 8px;
-            font-size: 0.9em;
-        }
-        
-        /* Search suggestions dropdown */
-        .search-suggestions {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-top: none;
-            border-radius: 0 0 8px 8px;
-            max-height: 150px;
-            overflow-y: auto;
-            z-index: 10;
-            display: none;
-        }
-        
-        /* Individual suggestion item */
-        .suggestion-item {
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        /* Suggestion hover state */
-        .suggestion-item:hover {
-            background: #f8f9fa;
-        }
-        
-        /* Remove border from last suggestion */
-        .suggestion-item:last-child {
-            border-bottom: none;
-        }
-        
-        /* Search loading indicator */
-        .search-loading {
-            display: none;
-            text-align: center;
-            padding: 1rem;
-            color: var(--text-light);
-        }
-        
-        /* Active state for loading indicator */
-        .search-loading.active {
-            display: block;
-        }
-        
-        /* Pulsing animation for loading */
-        .pulse {
-            animation: pulse 1.5s infinite;
-        }
-        
-        /* Pulse animation keyframes */
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-    </style>
+  <!-- Document Metadata -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delivery Information | Sweet Delights Bakery</title>
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="bakery, Polokwane, artisan bread, pastries, cakes, delivery">
+  <meta name="description" content="Sweet Delights Bakery delivery service in Polokwane. Fresh bread, pastries, and cakes delivered to your door.">
+
+  <!-- Styles (kept page-specific inline for convenience) -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+  <style>
+    /* Page-specific styles (consolidated & minimal) */
+    .centered-text { text-align: center; }
+
+    .delivery-feature, .process-step, .area-item { transition: transform .3s ease, box-shadow .3s ease; }
+    .delivery-feature:hover, .process-step:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,.15); }
+    .area-item:hover { transform: translateX(5px); background:#f8f9fa; cursor:pointer; }
+
+    .delivery-logo { transition: all .3s ease; border-radius:10px; cursor:pointer; }
+    .delivery-logo:hover { transform:scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,.2); filter:brightness(1.1); }
+
+    .search-input:focus { outline:none; border-color:var(--primary-color); box-shadow:0 0 0 3px rgba(155,60,60,.1); }
+    .search-suggestions { position:absolute; left:0; right:0; background:#fff; border:1px solid #e0e0e0; border-top:none; border-radius:0 0 8px 8px; max-height:150px; overflow-y:auto; z-index:10; display:none; }
+    .suggestion-item { padding:.5rem 1rem; border-bottom:1px solid #f0f0f0; cursor:pointer; }
+    .suggestion-item:last-child{ border-bottom:none; }
+    .search-highlight{ background:#fff3cd; padding:2px 4px; border-radius:3px; font-weight:600; }
+    .no-results{ color:var(--text-light); font-style:italic; padding:2rem; text-align:center; }
+    #resultsCount{ margin-bottom:1rem; font-weight:500; color:var(--text-light); }
+
+    /* Simple layout helpers used on this page */
+    .header-container, .footer-container, .section-container { max-width:1100px; margin:0 auto; padding:1rem; }
+
+    /* small responsive tweak for nav button */
+    .mobile-menu-toggle { background:none; border:none; cursor:pointer; }
+    .mobile-menu-toggle .menu-bar{ display:block; width:22px; height:2px; background:#333; margin:4px 0; }
+
+    /* suggestion active state (keyboard navigation) */
+    .suggestion-item.active{ background:#f0f0f0; }
+  </style>
 </head>
-<body class="centered-text">
-    <!-- Main Header Section -->
-    <header class="main-header">
-        <div class="header-container">
-            <!-- Logo linking to homepage -->
-            <a href="../index.html" class="logo-link">
-                <img src="../Assests/Gemini_Generated_Image_twte3htwte3htwte.png" alt="Sweet Delights Bakery Logo" class="logo-image">
-            </a>
-            
-            <!-- Primary Navigation -->
-            <nav class="primary-navigation">
-                <!-- Mobile Menu Toggle Button -->
-                <button class="mobile-menu-toggle active" aria-label="Close navigation menu" aria-expanded="true">
-                    <span class="menu-bar"></span>
-                    <span class="menu-bar"></span>
-                    <span class="menu-bar"></span>
-            
-                    <span class="menu-bar"></span>
-                    <span class="menu-bar"></span>
-                    <span class="menu-bar"></span>
-                </button>
-                
-                <!-- Navigation Links -->
-                <ul class="navigation-links">
-                    <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">Our Story</a></li>
-                    <li><a href="menu.html" class="nav-link">Menu</a></li>
-                    <li><a href="deliveries.html" class="nav-link active">Delivery</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
-                </ul>
-            </nav>
+<body>
+  <header class="main-header">
+    <div class="header-container">
+      <a href="../index.html" class="logo-link">
+        <img src="../Assests/logo.png" alt="Sweet Delights Bakery Logo" class="logo-image" width="160">
+      </a>
+
+      <nav class="primary-navigation" aria-label="Primary Navigation">
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+
+        <ul class="navigation-links" role="menubar">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">Our Story</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="deliveries.html" class="nav-link">Delivery</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero-section centered-text section-container">
+      <h1 class="main-heading">Delivery Service</h1>
+      <p class="hero-description">Fresh bakery goods delivered to your doorstep in Polokwane</p>
+    </section>
+
+    <section class="delivery-info section-container centered-text">
+      <div class="delivery-overview">
+        <h2>Freshness Delivered</h2>
+        <p class="lead">We partner with QuickDeliver SA to ensure your baked goods arrive fresh and on time.</p>
+      </div>
+
+      <div class="delivery-partner-card">
+        <div class="partner-header centered-text">
+          <img src="../Assests/QuickDelivery.jpg" alt="QuickDeliver SA Logo" class="delivery-logo" width="200">
+          <h3>Our Delivery Partner</h3>
         </div>
-    </header>
 
-    <!-- Main Content Area -->
-    <main class="main-content centered-text">
-        <!-- Hero Section with delivery page messaging -->
-        <section class="hero-section">
-            <div class="hero-content centered-content">
-                <h1 class="main-heading">Delivery Service</h1>
-                <p class="hero-description">Fresh bakery goods delivered to your doorstep in Polokwane</p>
-            </div>
-        </section>
+        <p>We've partnered with <strong>QuickDeliver SA</strong> to provide reliable, temperature-controlled delivery throughout Polokwane.</p>
 
-        <!-- Delivery Information Section -->
-        <section class="delivery-info section-container centered-text">
-            <!-- Delivery Overview -->
-            <div class="delivery-overview centered-content">
-                <h2>Freshness Delivered</h2>
-                <p class="lead">We partner with QuickDeliver SA to ensure your baked goods arrive fresh and on time, straight from our oven to your door.</p>
-            </div>
-
-            <!-- Delivery Partner Information Card -->
-            <div class="delivery-partner-card centered-content">
-                <div class="partner-header centered-content">
-                    <img src="../Assests/QuickDelivery.jpg" alt="QuickDeliver SA Delivery Partner Logo" class="delivery-logo" width="200">
-                    <h3>Our Delivery Partner</h3>
-                </div>
-                <p>We've partnered with <strong>QuickDeliver SA</strong> to provide reliable, temperature-controlled delivery service throughout Polokwane and surrounding areas.</p>
-                
-                <!-- Delivery Features Grid -->
-                <div class="delivery-features centered-content">
-                    <!-- Temperature Control Feature -->
-                    <div class="delivery-feature centered-content">
-                        <i class="fas fa-temperature-low"></i>
-                        <h4>Temperature Controlled</h4>
-                        <p>Your baked goods stay fresh and perfect</p>
-                    </div>
-                    <!-- Timely Delivery Feature -->
-                    <div class="delivery-feature centered-content">
-                        <i class="fas fa-clock"></i>
-                        <h4>Timely Delivery</h4>
-                        <p>On-time delivery guaranteed</p>
-                    </div>
-                    <!-- Secure Handling Feature -->
-                    <div class="delivery-feature centered-content">
-                        <i class="fas fa-shield-alt"></i>
-                        <h4>Secure Handling</h4>
-                        <p>Careful handling of all your orders</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Delivery Rules and Information -->
-            <div class="delivery-rules-card centered-content">
-                <h3>Delivery Information</h3>
-                <div class="rules-list centered-content">
-                    <!-- Delivery Hours -->
-                    <div class="rule-item centered-content">
-                        <div><strong>Delivery Hours:</strong></div>
-                        <div>8:00 AM - 6:00 PM Daily</div>
-                    </div>
-                    <!-- Minimum Order -->
-                    <div class="rule-item centered-content">
-                        <div><strong>Minimum Order:</strong></div>
-                        <div>R100.00</div>
-                    </div>
-                    <!-- Delivery Fee -->
-                    <div class="rule-item centered-content">
-                        <div><strong>Delivery Fee:</strong></div>
-                        <div>R25.00 within Polokwane</div>
-                    </div>
-                    <!-- Areas Served -->
-                    <div class="rule-item centered-content">
-                        <div><strong>Areas Served:</strong></div>
-                        <div>Polokwane & Surrounding Areas</div>
-                    </div>
-                    <!-- Order Cut-off Time -->
-                    <div class="rule-item centered-content">
-                        <div><strong>Order Cut-off:</strong></div>
-                        <div>2 hours before delivery time</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ordering Process Section -->
-            <div class="ordering-process centered-content">
-                <h2>How to Order for Delivery</h2>
-                <div class="process-steps">
-                    <!-- Step 1: Browse Menu -->
-                    <div class="process-step centered-content">
-                        <div class="step-number">1</div>
-                        <h4>Browse Our Menu</h4>
-                        <p>Check out our delicious selection of artisan breads, pastries, and cakes</p>
-                    </div>
-                    <!-- Step 2: Place Order -->
-                    <div class="process-step centered-content">
-                        <div class="step-number">2</div>
-                        <h4>Place Your Order</h4>
-                        <p>Call us at 015 291 1234 or use our contact form</p>
-                    </div>
-                    <!-- Step 3: Confirm Details -->
-                    <div class="process-step centered-content">
-                        <div class="step-number">3</div>
-                        <h4>Confirm Details</h4>
-                        <p>Provide your delivery address and preferred delivery time</p>
-                    </div>
-                    <!-- Step 4: Receive Delivery -->
-                    <div class="process-step centered-content">
-                        <div class="step-number">4</div>
-                        <h4>Fresh Delivery</h4>
-                        <p>Receive your fresh bakery goods at your doorstep</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Delivery Area Search Section -->
-            <section class="delivery-search centered-content">
-                <h2>Check Delivery Availability</h2>
-                <p>Search to see if we deliver to your area:</p>
-                
-                <!-- Search Input Container -->
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="Enter your suburb or area..." class="search-input">
-                    <i class="fas fa-search search-icon"></i>
-                    <!-- Search Suggestions Dropdown -->
-                    <div class="search-suggestions" id="searchSuggestions"></div>
-                </div>
-                
-                <!-- Loading Indicator -->
-                <div class="search-loading" id="searchLoading">
-                    <i class="fas fa-spinner fa-spin"></i> Searching...
-                </div>
-                
-                <!-- Search Results Area -->
-                <div class="search-results centered-content">
-                    <div class="results-count" id="resultsCount"></div>
-                    <!-- List of Delivery Areas -->
-                    <ul id="areasList" class="areas-list">
-                        <li class="area-item">Annadale</li>
-                        <li class="area-item">Bendor</li>
-                        <li class="area-item">Fauna Park</li>
-                        <li class="area-item">Flora Park</li>
-                        <li class="area-item">Ivy Park</li>
-                        <li class="area-item">Penina Park</li>
-                        <li class="area-item">Seshego</li>
-                        <li class="area-item">Ster Park</li>
-                        <li class="area-item">Welgelegen</li>
-                        <li class="area-item">Westernburg</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Call to Action Section -->
-            <div class="cta-section centered-content">
-                <h2>Ready to Place Your Order?</h2>
-                <p>Get fresh bakery goods delivered straight to your door</p>
-                <div class="hero-actions centered-content">
-                    <a href="contact.html" class="cta-button primary">Order Now</a>
-                    <a href="menu.html" class="cta-button secondary">View Menu</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer Section -->
-    <footer class="main-footer centered-text">
-        <div class="footer-container">
-            <div class="footer-content centered-grid">
-                <!-- Company Information -->
-                <div class="footer-section centered-content">
-                    <h3>Sweet Delights Bakery</h3>
-                    <p>Family-owned artisan bakery in Polokwane creating delicious bread, pastries, and custom cakes.</p>
-                </div>
-                
-                <!-- Delivery Information -->
-                <div class="footer-section centered-content">
-                    <h3>Delivery Info</h3>
-                    <p><strong>Hours:</strong> 8:00 AM - 6:00 PM</p>
-                    <p><strong>Minimum Order:</strong> R100.00</p>
-                    <p><strong>Delivery Fee:</strong> R25.00</p>
-                </div>
-                
-                <!-- Contact Information -->
-                <div class="footer-section centered-content">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-phone"></i> 015 291 1234</p>
-                    <p><i class="fas fa-envelope"></i> orders@sweetdelights.co.za</p>
-                </div>
-                
-                <!-- Social Media Links -->
-                <div class="footer-section centered-content">
-                    <h3>Follow Us</h3>
-                    <div class="social-links centered-text">
-                        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="social-link">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Copyright Information -->
-            <div class="footer-bottom centered-content">
-                <p>&copy; 2025 Sweet Delights Bakery. All rights reserved.</p>
-            </div>
+        <div class="delivery-features">
+          <div class="delivery-feature centered-text">
+            <i class="fas fa-temperature-low"></i>
+            <h4>Temperature Controlled</h4>
+            <p>Your baked goods stay fresh and perfect</p>
+          </div>
+          <div class="delivery-feature centered-text">
+            <i class="fas fa-clock"></i>
+            <h4>Timely Delivery</h4>
+            <p>On-time delivery guaranteed</p>
+          </div>
+          <div class="delivery-feature centered-text">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Secure Handling</h4>
+            <p>Careful handling of all your orders</p>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <!-- Inline JavaScript for delivery page functionality -->
-    <script>
-        // Enhanced Search functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get DOM elements
-            const searchInput = document.getElementById('searchInput');
-            const areasList = document.getElementById('areasList');
-            const areaItems = areasList.getElementsByTagName('li');
-            const resultsCount = document.getElementById('resultsCount');
-            const searchSuggestions = document.getElementById('searchSuggestions');
-            const searchLoading = document.getElementById('searchLoading');
-            
-            // Extract all area names for suggestions
-            const allAreas = Array.from(areaItems).map(item => item.textContent.trim());
-            
-            let searchTimeout;
-            
-            // Enhanced search function with highlighting
-            function performSearch(searchTerm) {
-                const filter = searchTerm.toLowerCase();
-                let visibleCount = 0;
-                
-                // Show loading indicator for better UX
-                searchLoading.classList.add('active');
-                
-                // Simulate search delay for better user experience
-                setTimeout(() => {
-                    // Loop through all area items
-                    for (let i = 0; i < areaItems.length; i++) {
-                        const areaName = areaItems[i].textContent.toLowerCase();
-                        
-                        // Check if area matches search term
-                        if (areaName.includes(filter)) {
-                            areaItems[i].style.display = 'block';
-                            
-                            // Highlight matching text
-                            if (filter && filter.length > 0) {
-                                const originalText = areaItems[i].textContent;
-                                const regex = new RegExp(`(${filter})`, 'gi');
-                                const highlightedText = originalText.replace(regex, '<span class="search-highlight">$1</span>');
-                                areaItems[i].innerHTML = highlightedText;
-                            }
-                            
-                            visibleCount++;
-                        } else {
-                            areaItems[i].style.display = 'none';
-                            areaItems[i].innerHTML = areaItems[i].textContent; // Reset highlighting
-                        }
-                    }
-                    
-                    // Update results count with better messaging
-                    if (visibleCount === 0 && filter.length > 0) {
-                        resultsCount.innerHTML = `No areas found matching "<strong>${filter}</strong>"`;
-                        resultsCount.style.color = '#dc3545';
-                    } else if (filter.length > 0) {
-                        resultsCount.innerHTML = `Found <strong>${visibleCount}</strong> area${visibleCount !== 1 ? 's' : ''} matching "<strong>${filter}</strong>"`;
-                        resultsCount.style.color = 'var(--text-light)';
-                    } else {
-                        resultsCount.innerHTML = `Showing all <strong>${visibleCount}</strong> delivery areas`;
-                        resultsCount.style.color = 'var(--text-light)';
-                    }
-                    
-                    // Hide loading indicator
-                    searchLoading.classList.remove('active');
-                }, 300); // Simulate search delay
-            }
-            
-            // Auto-suggest functionality
-            function showSuggestions(searchTerm) {
-                if (searchTerm.length < 2) {
-                    searchSuggestions.style.display = 'none';
-                    return;
-                }
-                
-                // Filter areas that match search term
-                const suggestions = allAreas.filter(area => 
-                    area.toLowerCase().includes(searchTerm.toLowerCase())
-                ).slice(0, 5); // Limit to 5 suggestions
-                
-                // Display suggestions if any match
-                if (suggestions.length > 0) {
-                    searchSuggestions.innerHTML = suggestions.map(area => 
-                        `<div class="suggestion-item">${area}</div>`
-                    ).join('');
-                    searchSuggestions.style.display = 'block';
-                } else {
-                    searchSuggestions.style.display = 'none';
-                }
-            }
-            
-            // Event listeners for search functionality
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.trim();
-                
-                // Clear previous timeout
-                clearTimeout(searchTimeout);
-                
-                // Show suggestions immediately
-                showSuggestions(searchTerm);
-                
-                // Debounce search for better performance
-                searchTimeout = setTimeout(() => {
-                    performSearch(searchTerm);
-                }, 200);
-            });
-            
-            // Handle suggestion clicks
-            searchSuggestions.addEventListener('click', function(e) {
-                if (e.target.classList.contains('suggestion-item')) {
-                    searchInput.value = e.target.textContent;
-                    searchSuggestions.style.display = 'none';
-                    performSearch(e.target.textContent);
-                }
-            });
-            
-            // Hide suggestions when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
-                    searchSuggestions.style.display = 'none';
-                }
-            });
-            
-            // Keyboard navigation for suggestions
-            searchInput.addEventListener('keydown', function(e) {
-                const suggestions = searchSuggestions.getElementsByClassName('suggestion-item');
-                let activeSuggestion = Array.from(suggestions).findIndex(s => s.classList.contains('active'));
-                
-                // Arrow down navigation
-                if (e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    if (suggestions.length > 0) {
-                        if (activeSuggestion > -1) {
-                            suggestions[activeSuggestion].classList.remove('active');
-                        }
-                        activeSuggestion = (activeSuggestion + 1) % suggestions.length;
-                        suggestions[activeSuggestion].classList.add('active');
-                        searchInput.value = suggestions[activeSuggestion].textContent;
-                    }
-                } 
-                // Arrow up navigation
-                else if (e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    if (suggestions.length > 0) {
-                        if (activeSuggestion > -1) {
-                            suggestions[activeSuggestion].classList.remove('active');
-                        }
-                        activeSuggestion = activeSuggestion <= 0 ? suggestions.length - 1 : activeSuggestion - 1;
-                        suggestions[activeSuggestion].classList.add('active');
-                        searchInput.value = suggestions[activeSuggestion].textContent;
-                    }
-                } 
-                // Enter key to select suggestion
-                else if (e.key === 'Enter' && activeSuggestion > -1) {
-                    e.preventDefault();
-                    searchInput.value = suggestions[activeSuggestion].textContent;
-                    searchSuggestions.style.display = 'none';
-                    performSearch(suggestions[activeSuggestion].textContent);
-                }
-            });
-            
-            // Add click functionality to area items
-            Array.from(areaItems).forEach(item => {
-                item.addEventListener('click', function() {
-                    searchInput.value = this.textContent;
-                    performSearch(this.textContent);
-                });
-            });
-            
-            // Initialize with all areas visible
-            performSearch('');
-            
-            // Add hover effects for interactive elements
-            const deliveryFeatures = document.querySelectorAll('.delivery-feature');
-            const processSteps = document.querySelectorAll('.process-step');
-            const deliveryLogo = document.querySelector('.delivery-logo');
-            
-            // Add transitions to delivery features
-            deliveryFeatures.forEach(feature => {
-                feature.style.transition = 'all 0.3s ease';
-            });
-            
-            // Add transitions to process steps
-            processSteps.forEach(step => {
-                step.style.transition = 'all 0.3s ease';
-            });
-            
-            // Add click effect to delivery logo
-            if (deliveryLogo) {
-                deliveryLogo.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                });
-            }
-        });
-       <!-- Load navigation JavaScript -->
-    src="../js/navigation.js"></script>
+      <div class="delivery-rules-card">
+        <h3>Delivery Information</h3>
+        <div class="rules-list">
+          <div class="rule-item"><strong>Delivery Hours:</strong> 8:00 AM - 6:00 PM Daily</div>
+          <div class="rule-item"><strong>Minimum Order:</strong> R100.00</div>
+          <div class="rule-item"><strong>Delivery Fee:</strong> R25.00 within Polokwane</div>
+          <div class="rule-item"><strong>Areas Served:</strong> Polokwane & Surrounding Areas</div>
+          <div class="rule-item"><strong>Order Cut-off:</strong> 2 hours before delivery time</div>
+        </div>
+      </div>
 
-    <!-- Your existing inline JavaScript for delivery page functionality -->
-    <script>
-        // Enhanced Search functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // ... your existing delivery search code ...
-        });
-    </script>
-</body>
-</body>
-    </script>
+      <div class="ordering-process centered-text">
+        <h2>How to Order for Delivery</h2>
+        <div class="process-steps">
+          <div class="process-step"><div class="step-number">1</div><h4>Browse Our Menu</h4><p>Check out our artisan breads, pastries, and cakes</p></div>
+          <div class="process-step"><div class="step-number">2</div><h4>Place Your Order</h4><p>Call us at 015 291 1234 or use our contact form</p></div>
+          <div class="process-step"><div class="step-number">3</div><h4>Confirm Details</h4><p>Provide your delivery address and preferred delivery time</p></div>
+          <div class="process-step"><div class="step-number">4</div><h4>Fresh Delivery</h4><p>Receive your fresh bakery goods at your doorstep</p></div>
+        </div>
+      </div>
+
+      <section class="delivery-search centered-text">
+        <h2>Check Delivery Availability</h2>
+        <p>Search to see if we deliver to your area:</p>
+
+        <div style="position:relative; max-width:520px; margin:0 auto;">
+          <input type="text" id="searchInput" placeholder="Enter your suburb or area..." class="search-input" style="width:100%; padding:.5rem 1rem;">
+          <i class="fas fa-search" style="position:absolute; right:12px; top:12px;"></i>
+          <div class="search-suggestions" id="searchSuggestions"></div>
+        </div>
+
+        <div class="search-loading" id="searchLoading" style="display:none; margin-top:1rem;"> <i class="fas fa-spinner fa-spin"></i> Searching...</div>
+
+        <div class="search-results centered-text">
+          <div id="resultsCount"></div>
+          <ul id="areasList" class="areas-list" style="list-style:none; padding:0;">
+            <li class="area-item">Annadale</li>
+            <li class="area-item">Bendor</li>
+            <li class="area-item">Fauna Park</li>
+            <li class="area-item">Flora Park</li>
+            <li class="area-item">Ivy Park</li>
+            <li class="area-item">Penina Park</li>
+            <li class="area-item">Seshego</li>
+            <li class="area-item">Ster Park</li>
+            <li class="area-item">Welgelegen</li>
+            <li class="area-item">Westernburg</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="cta-section centered-text">
+        <h2>Ready to Place Your Order?</h2>
+        <p>Get fresh bakery goods delivered straight to your door</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="cta-button primary">Order Now</a>
+          <a href="menu.html" class="cta-button secondary">View Menu</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer centered-text">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section"><h3>Sweet Delights Bakery</h3><p>Family-owned artisan bakery in Polokwane creating delicious bread, pastries, and custom cakes.</p></div>
+        <div class="footer-section"><h3>Delivery Info</h3><p><strong>Hours:</strong> 8:00 AM - 6:00 PM</p><p><strong>Minimum Order:</strong> R100.00</p><p><strong>Delivery Fee:</strong> R25.00</p></div>
+        <div class="footer-section"><h3>Contact Us</h3><p><i class="fas fa-phone"></i> 015 291 1234</p><p><i class="fas fa-envelope"></i> orders@sweetdelights.co.za</p></div>
+        <div class="footer-section"><h3>Follow Us</h3><p><a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></p></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 Sweet Delights Bakery. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <!-- Page scripts - single DOMContentLoaded wrapper (keeps JS consolidated) -->
+  <script src="../js/navigation.js"></script>
 </body>
 </html>
+
